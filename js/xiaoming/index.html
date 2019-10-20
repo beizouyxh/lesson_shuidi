@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>衷从海泡妞记</title>
+</head>
+<body>
+    <script>
+        //alert('先成功名，在成家');
+        //对象
+        class Flower{
+           constructor(type,n){ //构造函数 new 运行
+               this.type=type;  //属性
+               this.n=n;
+           }
+        }
+
+        var gongming =  {
+            name: '衷从海',
+            age: 20,
+            favorites:['代码','游戏','把妹'],
+            room:427,
+            yz:100,
+            isSingle: true,
+            //方法：
+            sendflower: function(target){
+                var flower = new Flower('红玫瑰',99);
+                console.log(flower.type,flower.n);
+                target.receiveflower(this,flower);
+
+            }
+        }
+
+        var guimingwei= {
+            name: '桂铭蔚',
+            age: 21,
+            isGoodMod:false,   //心情不好
+
+            receiveflower: function(sender,flower){
+               /*if(sender.yz<90)
+                {
+                    console.log('丑拒!');
+                }else{
+                    console.log('万达走一波');
+                }*/
+                if(!this.isGoodMod){
+                    console.log('丑拒! 小姐姐心情不好!');
+                }else{
+                    console.log('万达走一波');
+                }
+
+                console.log(sender,flower);
+            }
+        }
+             
+             var xiaomei ={
+                 hometown: '赣州南康',
+                 receiveflower:function(sender,flower){
+                   /*  if(sender.name =='衷从海')
+                     {
+                         console.log('海弟.......')
+                     }else{
+                         guyimingwei.receiveflower(sender,flower);
+                     }*/
+                     //定时器
+                     setTimeout(function(){
+                         guimingwei.isGoodMod =true;
+                         guimingwei.receiveflower(sender,flower);
+                     },10000)
+             }
+             }
+
+             gongming.sendflower(xiaomei);
+
+
+  </script>
+</body>
+</html>
