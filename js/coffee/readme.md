@@ -1,0 +1,31 @@
+- talk in js
+咖啡？
+编程是有规则
+结果？
+类 对象
+new Coffee();
+- js 中构建一个类，不用class 关键字（es5）
+  function Coffee(){  //首字母大写的函数的类
+  
+  }
+  new    将我们的现实思维和代码规则结合   将情商发挥出来
+- 把水煮沸？ 动作？方法名   上下文之中？ 类(属性+方法)
+- 用沸水冲泡咖啡
+- 把咖啡倒进杯子
+- 加糖和牛奶
+
+类 抽象概念  不是用来运行的，对象是内存的变量，new出来的
+调用函数 构造函数 constructor
+function Coffee(){
+    //构造函数
+}
+Coffee.prototype.boilWater=function(){}
+- 每次调用咖啡类的时候，都要对类的四个步骤，加大了使用类的难度
+- 面向对象 
+  类的设计者架构师 和类的使用者(业务开发者)，不一样
+ 
+- 茶的类设计
+ - 把水煮沸 boilWater
+ - 用沸水浸泡茶叶； seepTeaBag
+ - 把茶水倒进杯子    pourInCup
+ - 加柠檬    addLemon

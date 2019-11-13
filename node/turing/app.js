@@ -10,7 +10,7 @@ const aiTuling =new TULING({
    // Console.log('arrow function') 
    const result = await aiTuling.send({
        userid: 1,
-       info:'今天的天气',
+       info:'你是傻子吗',
        loc: '南昌市'
    });
    console.log(result);
