@@ -19,7 +19,7 @@ var distributeCandies=(candies)=>{
        }
     }
     return (count>=candies.length>>1)?
-    candies.length>>1:count;      //三元运算符
+    candies.length>>1:count;      //三元运算符  >>右移运算符
 }
 // if(count>candies.length/2){
 //     return candies.length/2;
