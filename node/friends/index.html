@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <!-- 挂载点 mounted  DOM-->
+    <ul id="friends">
+        <li>暂无数据</li>
+    </ul>
+    <script>
+        fetch('/students').then(data=>data.json()).
+        then(data=>{
+            //console.log(data)
+            data.map(item=>{
+                return `
+                <li>
+                    ${item.name}
+                    ${item.hometown}
+                    ${item.email}
+                    ${item.phone}
+                </li>
+                `
+            }).join('')
+        })
+    //    const friends =[{
+    //        name:'尹小豪',
+    //        hometown:'赣州',
+    //        email:'874609947@qq.com'
+    //    },{
+    //        name:'罗安培',
+    //        hometown:'宜春',
+    //        email:'123456789@qq.com'
+    //    }];
+
+    // //    window.onload=function(){
+    // //        //最佳时机  生命周期  晚了
+    // //    } 
+    // //DOM ready .friends  挂载到页面上，就可以开始了。页面加载过程。。。。。浏览器拿着html文件后，body
+    // //标签拿出来，解析DOM树  看到html了
+    // document.addEventListener('DOMContentLoaded',function(){
+    //     document.querySelector('#friends').innerHTML='';
+    //     //friends->friends
+    //     //document.querySelector('#friend').innerHTML=
+
+    //     // friends.forEach(friends=>{
+    //     //     document.querySelector('#friends').innerHTML +=`
+    //     //     <li>
+    //     //     ${friends.name} ${friends.hometown} ${friends.email}
+    //     //     </li>
+    //     //     `
+    //     // });
+    //     //JSON数组  => HTML数组
+    //     document.querySelector('#friends').innerHTML=
+    //     friends.map(friend=>{ //回调函数
+    //     return `
+    //     <li>
+    //     ${friend.name}
+    //     ${friend.hometown}
+    //     ${friend.email}
+    //     </li>
+    //     `
+    //     }).join('')
+    //    // document.querySelector('#friends').innerHTML=htmlArr.join('');
+    //    // console.log(htmlArr,ul);
+    //   // console.log(htmlArr.join('')) ;
+    // })
+    </script>
+</body>
+</html>
