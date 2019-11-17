@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+        // root节点插入文字  五岳归来不看山，要看就看岳不群的华山
+        //文字设置成红色
+        // document.getElementById('root').innerText='五岳归来不看山,要看就看岳不群的华山';
+       // document.getElementById('root').style.color='red';
+       //内存(定义变量)  性能（网页查询性能，ID是索引）
+    //    const el =document.getElementById('root');
+    //    //如何合并一下两句代码
+    //     // el.innerText='五岳归来不看山,要看就看岳不群的华山';
+    //     // el.style.color='red';
+    //     // .innerText text();
+    //     // .style  .css()
+    //     el
+    //     .innerText='五岳归来不看山,要看就看岳不群的华山'
+    //    // 它的类型是DOM节点，才能合并
+    //     .fontcolor('red');
+
+         //$ 函数名  cssSelecter 形参 
+        
+        //  1. text函数有自己的需要，设置innerText
+        //  2. 支持链式 ，return 结点
+        function $(cssSelector){
+            return document.querySelector(cssSelector);
+        }
+        function text(str,el){
+            el.innerText =str;
+            return el;
+        }
+        function css(type,val,el){
+            el.style[type]=val;
+            return el;
+            
+        }
+        css('color','red',text('五岳归来不看山,要看就看岳不群的华山',$('#root')));   //函数的嵌套
+        //.innerText='五岳归来不看山,要看就看岳不群的华山'
+        //.style.color='red';
+        
+    </script>
+</body>
+</html>
