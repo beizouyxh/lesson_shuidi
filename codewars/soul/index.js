@@ -10,6 +10,7 @@ const createPhoneNumber=(digits)=>{
 //return `(${digits.splice(0,3).join('')})${digits.splice(0,3).join('')}-${digits.splice(0,4).join('')}`;  
   //splice方法切完后形成新数组
   return `(${digits.slice(0,3).join('')})${digits.slice(3,6).join('')}-${digits.slice(6,10).join('')}`; 
+  //splice方法下标
 }
 
 console.log(createPhoneNumber([1,2,3,4,5,6,7,8,9,0]));

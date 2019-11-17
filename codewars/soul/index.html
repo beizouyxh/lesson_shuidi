@@ -15,6 +15,13 @@
         //文字设置成红色
         // document.getElementById('root').innerText='五岳归来不看山,要看就看岳不群的华山';
        // document.getElementById('root').style.color='red';
+
+
+
+
+
+
+
        //内存(定义变量)  性能（网页查询性能，ID是索引）
     //    const el =document.getElementById('root');
     //    //如何合并一下两句代码
@@ -27,26 +34,43 @@
     //    // 它的类型是DOM节点，才能合并
     //     .fontcolor('red');
 
+
+
+
+    //函数组合
+
          //$ 函数名  cssSelecter 形参 
-        
+       
         //  1. text函数有自己的需要，设置innerText
         //  2. 支持链式 ，return 结点
-        function $(cssSelector){
-            return document.querySelector(cssSelector);
-        }
-        function text(str,el){
-            el.innerText =str;
-            return el;
-        }
-        function css(type,val,el){
-            el.style[type]=val;
-            return el;
+        // function $(cssSelector){
+        //     return document.querySelector(cssSelector);
+        // }
+        // function text(str,el){
+        //     el.innerText =str;
+        //     return el;
+        // }
+        // function css(type,val,el){
+        //     el.style[type]=val;
+        //     return el;
             
-        }
-        css('color','red',text('五岳归来不看山,要看就看岳不群的华山',$('#root')));   //函数的嵌套
+        // }
+        // css('color','red',text('五岳归来不看山,要看就看岳不群的华山',$('#root')));   //函数的嵌套
         //.innerText='五岳归来不看山,要看就看岳不群的华山'
         //.style.color='red';
+
+
         
+    // 原型？  prototype 定义的方法，是可以找到的
+    // 原型上的方法返回实例，一直点下去？
+    // $.text()->$->.css?
+    // 1.构建一个类  _$
+    // 2.prototype上添加两个方法text css   每个方法都返回  _$实例  $
+    // 3.链式调用
+    //源码分析课，手写Jquery
+    $('root')
+    .text('五岳归来不看山,要看就看岳不群的华山')
+    .css('color','red')
     </script>
 </body>
 </html>

@@ -1,0 +1,5 @@
+<view >
+      <van-button type="primary" square block bind:click=
+      "addDate">新增数据</van-button>
+
+</view>
