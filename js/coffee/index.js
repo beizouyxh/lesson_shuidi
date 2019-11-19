@@ -59,5 +59,5 @@ Tea.prototype.makeTea=function(){
     console.log('茶做好了，请喝吧！');
 }
 const tea =new Tea('普洱茶');
-tea.makeTea();
 console.log(tea.type);
+tea.makeTea();
