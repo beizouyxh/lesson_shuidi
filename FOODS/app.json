@@ -29,11 +29,12 @@
            "selectedIconPath":"assets/icons/add-active.png"
         },
         {
-          "text":"我",
-           "pagePath":"pages/users/show",
-           "iconPath":"assets/icons/face.png",
-           "selectedIconPath":"assets/icons/face-active.png"
+          "text": "我",
+          "pagePath": "pages/users/show",
+          "iconPath": "assets/icons/face.png",
+          "selectedIconPath": "assets/icons/face-active.png"
         }
+        
 
       ]
   },
