@@ -2,3 +2,6 @@
 等开发完成之后，在将代码合并到主分支。
 git branch yxh
 git checkout yxh
+
+bug fixed
+git checkout -b fix-001
