@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/buy/buy",
+    "pages/users/show",
+    "pages/server/server"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#06AD56",
+    "navigationBarTitleText": "毒APP",
+    "nav{igationBarTextStyle": "black"
+  },
+  "tabBar":{
+      "selectedColor":"#000000",
+      "borderStyle":"white",
+      "backgroundColor":"#ededed",
+      "list":[
+        {
+          "text":"毒",
+          "pagePath":"pages/index/index",
+          "iconPath":"images/du.png",
+          "selectedIconPath":"images/du_active.png"
+        },
+        {
+          "text":"购买",
+          "pagePath":"pages/buy/buy",
+          "iconPath":"images/buy.png",
+          "selectedIconPath":"images/buy_active.png"
+        },
+        {
+           "text":"服务",
+           "pagePath":"pages/server/server",
+           "iconPath":"images/server.png",
+           "selectedIconPath":"images/server_active.png"
+        },
+        {
+          "text": "我",
+          "pagePath": "pages/users/show",
+          "iconPath": "images/user.png",
+          "selectedIconPath": "images/user_active.png"
+        }
+        
+
+      ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
