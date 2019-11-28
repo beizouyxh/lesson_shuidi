@@ -1,0 +1,5 @@
+.media-box{
+    width: 48%;
+    height: 35%;
+    display: inline;
+}

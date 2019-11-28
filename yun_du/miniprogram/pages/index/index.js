@@ -3,7 +3,7 @@ Page({
      entities:[
       {
         imageUrl: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1574164227435&di=9f4ec7f6fab104f3831a28ecfbd9ccbb&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fblog%2F201510%2F20%2F20151020194029_wcySK.jpeg',
-        title: 'A',
+        price: 'A',
         description: 'aa'
       },
       {
