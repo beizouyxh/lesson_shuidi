@@ -10,3 +10,13 @@ websocket
 :restaurant_id
 https://www.meituan.com'域名'/
 path/restaurant/params?a=1&b=2  查询字符串
+
+- http 协议
+- domain 域名
+- path  以/开始     /restaurant/:id
+- GET 谓语动词
+新加餐馆的url
+form表单
+/restaurant路径
+使用post方法 /restaurant  form 保存
+get 餐馆列表/restaurant?page=1
