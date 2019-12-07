@@ -1,66 +1,103 @@
-// pages/find/find.js
+const app=getApp();
 Page({
+  data:{
+    currentTab:0,
+    navScrollLeft:0,
+    navData:[
+      {
+        id:1,
+        name:'全部'
+      },
+      { 
+        id:2,
+        name:'日用百货'
+      },
+      {
+        id:3,
+        name:'食品保健'
+      },
+      {
+        id:3,
+        name:'家用电器'
+      },
+      {
+        id:3,
+        name:'电脑数码'
+      },
+      {
+        id:3,
+        name:'个护化妆'
+      },
+      {
+        id:3,
+        name:'母婴用品'
+      },
+      {
+        id:3,
+        name:'家居家装'
+      },
+      {
+        id:3,
+        name:'服饰鞋包'
+      },
+      {
+        id:3,
+        name:'办公设备'
+      },
+      {
+        id:3,
+        name:'运动户外'
+      },
+      {
+        id:3,
+        name:'图书影像'
+      },
+      {
+        id:3,
+        name:'玩模乐器'
+      },
+      {
+        id:3,
+        name:'礼品钟表'
+      },
+      {
+        id:3,
+        name:'汽车用品'
+      },
+      {
+        id:3,
+        name:'金融旅游'
+      },
+      
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+]
+},
+  // showUser(){
+  //   console.log(app);
+  //   //用户如何点击了授权，就显示小家
+  //   //如果没有则显示登陆
+  //  wx.navigateTo({
+  //    url:"/pages/login/login"
+  //  })
+  // },
+  // onLoad(){
+  //   wx.request({
+  //     // url:'http://localhost:1314/indexPage',
+  //     success:(res)=>{
+  //      // console.log(res);
+  //      const navData=res.data.navData;
+  //      this.setData({
+  //        navData
+  //      })
 
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  //     }
+  //   })
+  // },
+  switchNav(e){
+    const cur =e.currentTarget.dataset.id;
+    //console.log(cur);
+    this.setData({
+      currentTab:cur
+    })
   }
 })

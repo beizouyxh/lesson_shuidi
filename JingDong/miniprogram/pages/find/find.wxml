@@ -1,2 +1,16 @@
-<!--pages/find/find.wxml-->
-<><view></view>
+<view class="container">
+  <!-- navbar -->
+  <view class="section">
+      <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+        <!-- block 专门承载小程序的指令 -->
+         <block wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+           <view class="nav-item {{currentTab == id? 'active':''}}" data-name="{{navItem.name}}" data-id="{{id}}" bindtap="switchNav">
+             {{navItem.name}}
+           </view>
+
+         </block>
+      </scroll-view>
+      <!-- 单纯的跳转 -->
+  </view>
+
+</view>
