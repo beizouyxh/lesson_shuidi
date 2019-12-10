@@ -8,7 +8,7 @@ page{
     /* rpx 对应的是750 设计师给的设计稿是 */
     position:fixed;
     width: 750rpx;
-    height: 1064rpx;
+    height: 1100rpx;
     /* background-color: green; */
     top: 10rpx;
     box-shadow:1px 1px 6px #f4f6f8;
@@ -62,5 +62,46 @@ page{
     color: #0023FF;
   
   }
+.media-box{
+  width: 100%;
+  height: 1010rpx;  
+  padding-top: 90rpx;
+  background-color:#F0F0F0;
+  box-shadow:1px 1px 6px #B8B8B8;
+}
+.media-box__hd {
+  height:25%;
+ padding: 10rpx;
+ margin-bottom: 8rpx;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  left: 0;
+}
+.media-box__thumb{
+
+  height: 100%;
+  width: 35%;
+ 
+}
+.media-box__bd{
+  height: 100%;
+  width: 65%;
+ /* background-color: green; */
+ 
+}
+.media-box__title{
+  height: 40%;
+  width: 100%;
+  padding-left: 10rpx;
+}
+.media-box__desc{
+  height: 60%;
+  width: 100%;
+  color:red;
+  font-size: 30rpx;
+}
+
 
 

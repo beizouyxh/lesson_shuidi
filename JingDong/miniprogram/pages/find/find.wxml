@@ -12,5 +12,14 @@
       </scroll-view>
       <!-- 单纯的跳转 -->
   </view>
-
+  <view class="media-box ">
+     <view wx:for="{{entities}}"  class="media-box__hd     ">
+          <image class="media-box__thumb  " src="{{item.imageUrl}}"></image>
+          
+          <view class="media-box__bd">
+               <view class="media-box__title">{{item.title}}</view>
+               <view class="media-box__desc">{{item.price}}</view>
+          </view>
+     </view>    
+</view>
 </view>
