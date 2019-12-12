@@ -19,6 +19,7 @@
           <view class="media-box__bd">
                <view class="media-box__title">{{item.title}}</view>
                <view class="media-box__desc">{{item.price}}</view>
+                
           </view>
      </view>    
 </view>

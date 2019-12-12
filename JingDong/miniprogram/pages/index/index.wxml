@@ -5,6 +5,8 @@
           <view class="media-box__bd">
                <view class="media-box__title">{{item.title}}</view>
                <view class="media-box__desc">{{item.price}}</view>
+               <view class="media-box__time">{{item.time}}</view>
+
           </view>
      </view>    
 </view>
