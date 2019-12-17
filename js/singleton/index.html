@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>单例模式</title>
+    <style>
+        #model{
+            height: 200px;
+            width: 200px;
+            line-height: 200px;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border: 1px solid black;
+            text-align: center;
+            /* background-color:rgba(0,0,0,.3); */
+        }
+        /* #open{
+            cursor: pointer;
+        }
+        #open:disabled{
+            cursor: not-allowed;
+        } */
+    </style>
+</head>
+<body>
+    <button id="open">打开弹框</button>
+    <button id="close">关闭弹框</button>
+    <script>
+        const Model=(function(){               //立即执行函数
+            let model=null;  //模态框 闭包区域  无法被回收内存
+            return function(){
+                if(!model){
+                    //创建一次
+                    model=document.createElement('div');
+                    model.innerHTML='我是一个全局唯一的model';
+                    model.id='model';
+                    model.style.display='none';
+                    document.body.appendChild(model);
+                }
+                return model; //Model 被运行的时候
+            }
+        })();
+        document.getElementById('open').addEventListener('click',function(){
+            const model=new Model();
+            model.style.display='block';
+            // 做一个弹窗？90%的网站是不登录的 就不用了去加载login 点击后再动态加载   显示或隐藏
+            // const model=document.createElement('div');
+            // model.innerHTML='我是一个全局唯一的model';
+            // model.id='model';
+            // document.body.appendChild(model);
+            // this.setAttribute('disabled','disabled');        //禁用一个按钮
+        })
+        document.getElementById('close').addEventListener('click',()=>{
+            const model=new Model();
+            model.style.display='none';
+        //   if (document.getElementById('model')){
+        //      document.body.removeChild(document.getElementById('model'));    //找出父元素调用removechild方法来删除节点
+        //       document.getElementById('open').removeAttribute('disabled');
+        //   }
+        })
+    </script>
+</body>
+</html>
