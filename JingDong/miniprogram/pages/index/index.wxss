@@ -1,3 +1,8 @@
+page{
+    width: 100%;
+    height: 100vh;
+    background-color:#f4f6f8;
+  }
 .media-box{
   width: 750rpx;
   height: 1100rpx;  
@@ -5,8 +10,8 @@
   box-shadow:1px 1px 6px #B8B8B8;
 }
 .media-box__hd {
-  height:275rpx;
- margin-bottom: 10rpx;
+  height:280rpx;
+ margin-bottom: 8rpx;
   width: 750rpx;
   background-color: #ffffff;
   display: flex;
@@ -28,6 +33,7 @@
 .media-box__title{
   height: 110rpx;
   width: 487.5rpx;
+  padding-top: 20rpx;
   padding-left: 10rpx;
 }
 .media-box__desc{
@@ -36,10 +42,26 @@
   color:red;
   font-size: 30rpx;
 }
-.media-box__time{
+.box__bd{
   width: 487.5rpx;
   height: 82.5rpx;
-  padding-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  
+}
+.media-box__time{
+  width: 341.25rpx;
+  padding-top: 40rpx;
   font-size: 26rpx;
   color: #B8B8B8;
+}
+.comment{
+  width: 73rpx;
+  padding-left: 20rpx;
+   transform: scale(.05);
+}
+.num{
+  width: 73rpx;
+   transform: scale(.05);
+   padding-right: 20rpx;
 }

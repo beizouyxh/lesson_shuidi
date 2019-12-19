@@ -78,22 +78,26 @@ Page({
       {
         imageUrl: '../../images/p1.jpg',
         title: '耐克男鞋',
-        price: '480元'
+        price: '480元',
+        time:'13:24'
       },
    {
      imageUrl: '../../images/p2.png',
      title: 'iPhone X',
-     price: '8800元包邮'
+     price: '8800元包邮',
+     time:'12:45'
    },
    {
      imageUrl: '../../images/p1.jpg',
      title: '耐克男鞋',
-     price: '480元'
+     price: '480元',
+     time:'13:12'
    },
    {
      imageUrl: '../../images/p2.jpg',
      title: '曹杏脯',
-     price: '10元'
+     price: '10元',
+     time:'16:28'
    }
 
 
@@ -130,13 +134,13 @@ Page({
   onLoad() {
     console.log('onLoad');
   },
-  onReachBottom() {      //生命周期函数
-    //console.log('触底了');
-    const data = [...this.data.entities,
-    ...this.data.entities,];
-    this.setData({
-      entities: data
-    })
-  }
+  // onReachBottom() {      //生命周期函数
+  //   //console.log('触底了');
+  //   const data = [...this.data.entities,
+  //   ...this.data.entities,];
+  //   this.setData({
+  //     entities: data
+  //   })
+  // }
   
 })
