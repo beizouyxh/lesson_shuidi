@@ -68,6 +68,7 @@ page{
   width: 750rpx;
   padding-top: 90rpx;
   height: 1010rpx;  
+  margin-top: 10rpx;
   background-color:#F0F0F0;
   box-shadow:1px 1px 6px #B8B8B8;
 }
@@ -109,6 +110,7 @@ page{
   height: 82.5rpx;
   display: flex;
   flex-direction: row;
+ 
   
 }
 .media-box__time{
@@ -116,6 +118,8 @@ page{
   padding-top: 40rpx;
   font-size: 26rpx;
   color: #B8B8B8;
+   /* display: flex;
+  flex-direction: row; */
 }
 .comment{
   width: 73rpx;
