@@ -1,0 +1,12 @@
+{
+  "name": "cluster",
+  "version": "1.0.0",
+  "description": "- web 跟桌面(单机)最大区别",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
