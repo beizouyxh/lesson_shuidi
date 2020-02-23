@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/news/news",
+    "pages/index/index"
+    
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF0202",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "music"
+  }
+  
+ 
+}

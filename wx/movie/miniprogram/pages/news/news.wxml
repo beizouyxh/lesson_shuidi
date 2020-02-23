@@ -1,0 +1,13 @@
+<view class="news-container">
+   <swiper indicator-dots="true" autoplay="true" interval="2000" circular="true">
+    <swiper-item>
+        <image src="../../images/view1.jpeg"></image>
+    </swiper-item>
+     <swiper-item>
+         <image src="../../images/view2.jpg"></image>
+    </swiper-item>
+     <swiper-item>
+         <image src="../../images/view3.jpg"></image>
+    </swiper-item>
+  </swiper>
+</view>

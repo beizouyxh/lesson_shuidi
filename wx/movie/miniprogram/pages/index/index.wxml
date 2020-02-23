@@ -1,0 +1,7 @@
+<view class="index-container">
+    <image class="logo" src="../../images/logo.jpg"></image>
+    <text class="username">hello iwen</text>
+    <view class="btn" bindtap="gonewsTap">
+       <text>和音乐一起分享时光</text>
+    </view>
+</view>
