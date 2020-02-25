@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="nav">
+        <a href="#/page1">page1</a>
+        <a href="#/page2">page2</a>
+        <a href="#/page3">page3</a>
+    </div>
+    <div id="container"></div>
+    <script>
+        // window.location.hash = 'hash字符串'; // 用于设置 hash 值
+
+        // let hash = window.location.hash; // 获取当前 hash 值
+
+        // // 监听hash变化，点击浏览器的前进后退会触发
+        // window.addEventListener('hashchange', function(event) {
+        //     let newURL = event.newURL; // hash 改变后的新 url
+        //     let oldURL = event.oldURL; // hash 改变前的旧 url
+        //     console.log(newURL, oldURL);
+        //     document.getElementById('root').innerHTML = window.location.hash
+        // })
+        class HashRouter {
+
+            constructor() {
+                    this.routers = {}; //配置，是设计关键点
+                    //存储路由配置 hash key val 
+                    window.addEventListener('hashchange', () => {
+                        let hash = window.location.hash.slice(1),
+                            handler;
+                        handler = this.routers[hash];
+                        if (!hash) {
+                            handler = this.routers.index;
+                        } else {
+                            handler = this.routers[hash];
+                        }
+                        handler.call(this);
+                    })
+                }
+                //hashchange 后执行哪个函数
+                //vue 组件 函数式组件  callback
+            register(hash, callback = function() {}) {
+                this.routers[hash] = callback;
+            }
+            registerIndex(cb = () => {}) {
+                this.routers['index'] = cb;
+            }
+
+        }
+        let router = new HashRouter(); //路由对象
+        let container = document.getElementById('container'); //根组件
+        router.registerIndex(() => container.innerHTML = '我是首页');
+        router.register('/page1', () => container.innerHTML = '我是page1'); //路由  对应执行事   //vue.
+        router.register('/page2', () => container.innerHTML = '我是page2');
+        router.register('/page3', () => container.innerHTML = '我是page3');
+    </script>
+</body>
+
+</html>
