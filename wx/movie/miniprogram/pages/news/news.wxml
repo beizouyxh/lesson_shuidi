@@ -13,55 +13,19 @@
 
   <view class="artclelist">
       <view class="author-time">
-          <image class="author-icon" src="../../images/author.jpg" />
-          <text class="author-name">北走</text>
-          <text class="author-date">2020/2/24</text>
+          <image class="author-icon" src="{{useData[0].authoricon}}" />
+          <text class="author-name">{{useData[0].authorName}}</text>
+          <text class="author-date">{{useData[0].authorDate}}</text>
       </view>
-      <text class="title">岁月不老，你我不散</text>
-      <image class="article-img" src="../../images/view4.png" />
-      <text class="articlet-ext">岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散</text>
+      <text class="title">{{useData[0].title}}</text>
+      <image class="article-img" src="{{useData[0].articleImg}}" />
+      <text class="articlet-text">{{useData[0].articleText}}</text>
       <view class="article-like">
       <image class="article-like-icon" src="../../images/shoucang.png" />
-      <text class="article-like-text">12</text>
+      <text class="article-like-text">{{useData[0].articleLikeSC}}</text>
       <image class="article-like-icon" src="../../images/pinglun.png" />
-      <text class="article-like-text">30</text>
+      <text class="article-like-text">{{useData[0].articleLikeComment}}</text>
       </view>
   </view>
-
-  <view class="artclelist">
-      <view class="author-time">
-          <image class="author-icon" src="../../images/author.jpg" />
-          <text class="author-name">北走</text>
-          <text class="author-date">2020/2/24</text>
-      </view>
-      <text class="title">岁月不老，你我不散</text>
-      <image class="article-img" src="../../images/view4.png" />
-      <text class="articlet-ext">岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散</text>
-      <view class="article-like">
-      <image class="article-like-icon" src="../../images/shoucang.png" />
-      <text class="article-like-text">12</text>
-      <image class="article-like-icon" src="../../images/pinglun.png" />
-      <text class="article-like-text">30</text>
-      </view>
-  </view>
-
-  <view class="artclelist">
-      <view class="author-time">
-          <image class="author-icon" src="../../images/author.jpg" />
-          <text class="author-name">北走</text>
-          <text class="author-date">2020/2/24</text>
-      </view>
-      <text class="title">岁月不老，你我不散</text>
-      <image class="article-img" src="../../images/view4.png" />
-      <text class="articlet-ext">岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散岁月不老，你我不散</text>
-      <view class="article-like">
-      <image class="article-like-icon" src="../../images/shoucang.png" />
-      <text class="article-like-text">12</text>
-      <image class="article-like-icon" src="../../images/pinglun.png" />
-      <text class="article-like-text">30</text>
-      </view>
-  </view>
-
-  
 
 </view>
