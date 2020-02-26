@@ -1,0 +1,18 @@
+<template name="newsTemplate">
+    <view class="artclelist">
+      <view class="author-time">
+          <image class="author-icon" src="{{authoricon}}" />
+          <text class="author-name">{{authorName}}</text>
+          <text class="author-date">{{authorDate}}</text>
+      </view>
+      <text class="title">{{title}}</text>
+      <image class="article-img" src="{{articleImg}}" />
+      <text class="articlet-text">{{articleminText}}</text>
+      <view class="article-like">
+      <image class="article-like-icon" src="../../images/shoucang.png" />
+      <text class="article-like-text">{{articleLikeSC}}</text>
+      <image class="article-like-icon" src="../../images/pinglun.png" />
+      <text class="article-like-text">{{articleLikeComment}}</text>
+      </view>
+    </view>
+</template>

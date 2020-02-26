@@ -1,3 +1,4 @@
+<import src="news-template/news-template.wxml"></import>
 <view class="news-container">
    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoPlay}}" interval="{{interval}}" circular="{{circular}}">
     <swiper-item>
@@ -11,21 +12,9 @@
     </swiper-item>
   </swiper>
 
-  <view class="artclelist">
-      <view class="author-time">
-          <image class="author-icon" src="{{useData[0].authoricon}}" />
-          <text class="author-name">{{useData[0].authorName}}</text>
-          <text class="author-date">{{useData[0].authorDate}}</text>
-      </view>
-      <text class="title">{{useData[0].title}}</text>
-      <image class="article-img" src="{{useData[0].articleImg}}" />
-      <text class="articlet-text">{{useData[0].articleText}}</text>
-      <view class="article-like">
-      <image class="article-like-icon" src="../../images/shoucang.png" />
-      <text class="article-like-text">{{useData[0].articleLikeSC}}</text>
-      <image class="article-like-icon" src="../../images/pinglun.png" />
-      <text class="article-like-text">{{useData[0].articleLikeComment}}</text>
-      </view>
-  </view>
-
+  <block wx:for="{{useData}}" wx:for-item="item" wx:key="key">
+      <template is="newsTemplate" data="{{...item}}"></template>
+    
+  </block>
+  
 </view>

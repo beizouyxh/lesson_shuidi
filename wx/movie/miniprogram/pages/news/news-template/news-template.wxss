@@ -1,0 +1,80 @@
+/*
+  文章的样式
+*/
+
+.artclelist {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20rpx;
+    margin-bottom: 40rpx;
+    background-color: #fff;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 20rpx;
+    padding-bottom: 10rpx;
+}
+
+.author-time {
+    margin-top: 10rpx;
+    margin-bottom: 20rpx;
+}
+
+.author-icon {
+    width: 60rpx;
+    height: 60rpx;
+    border: solid 1px #f4f6f8;
+    vertical-align: middle;
+    /*垂直居中*/
+}
+
+.author-name {
+    margin-left: 20rpx;
+}
+
+.author-date {
+    margin-left: 20rpx;
+    vertical-align: middle;
+    margin-bottom: 10rpx;
+    font-size: 26rpx;
+}
+
+.title {
+    font-size: 34rpx;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20rpx;
+}
+
+.article-img {
+    margin-left: 32rpx;
+    width: 100%;
+    margin: auto 0;
+    margin-bottom: 30rpx;
+}
+
+.article-text {
+    color: #666;
+    font-size: 26rpx;
+    margin-bottom: 20rpx;
+    letter-spacing: 2rpx;
+    /*字间距*/
+    line-height: 40rpx;
+}
+
+article-like {
+    font-size: 26rpx;
+    flex-direction: row;
+    line-height: 32rpx;
+}
+
+.article-like-icon {
+    height: 32rpx;
+    width: 32rpx;
+    margin-right: 16rpx;
+    vertical-align: middle;
+}
+
+.article-like-text {
+    vertical-align: middle;
+    margin-right: 40rpx;
+}

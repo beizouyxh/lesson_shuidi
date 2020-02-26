@@ -1,4 +1,4 @@
-var newsData = require("../data/newsdata.js");
+var newsData = require("../data/newsdata.js"); //引入数据
 Page({
     data: {
         indicatorDots: true,
