@@ -12,7 +12,7 @@ var initData = [{
         },
         {
             "newsid": 1,
-            "authoricon": "../../images/author.jpg",
+            "authoricon": "http://pic2.zhimg.com/50/v2-76f2981822f9984d848f542d243a1863_hd.jpg",
             "authorName": "北走",
             "authorDate": "2020/2/24",
             "title": "中国人在2019年对奢侈品的兴趣减弱，品牌该怎么做？",
@@ -24,7 +24,7 @@ var initData = [{
         },
         {
             "newsid": 2,
-            "authoricon": "../../images/author.jpg",
+            "authoricon": "http://pic2.zhimg.com/50/v2-76f2981822f9984d848f542d243a1863_hd.jpg",
             "authorName": "北走",
             "authorDate": "2020/2/24",
             "title": "杭州大厦恢复营业，五小时销售额破1100万",
