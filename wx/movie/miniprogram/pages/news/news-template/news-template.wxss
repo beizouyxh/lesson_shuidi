@@ -22,6 +22,7 @@
 .author-icon {
     width: 60rpx;
     height: 60rpx;
+    border-radius: 50%;
     border: solid 1px #f4f6f8;
     vertical-align: middle;
     /*垂直居中*/
