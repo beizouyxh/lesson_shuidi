@@ -2,6 +2,7 @@ var newsData = require("../../data/newsdata.js");
 Page({
     data: {
         // detailData: []
+        isPlayer: false
     },
     onLoad: function(options) {
         // console.log(newsData.initData[options.newsid]);
@@ -63,6 +64,60 @@ Page({
             icon: 'success',
             duration: 800,
             mask: true
+        })
+    },
+    onShowTap: function(event) {
+        // wx.showModal({
+        //     title: '提示',
+        //     content: '这是一个模态弹窗',
+        //     success: function(res) {
+        //         if (res.confirm) {
+        //             console.log('用户点击确定')
+        //         }
+        //     }
+        // })
+        wx.showActionSheet({
+            itemList: ['分享到QQ', '分享到微信', '分享到微博'],
+            success: function(res) {
+                console.log(res.rapIndex)
+            },
+            fail: function(res) {
+                console.log(res.errMsg)
+            }
+        })
+    },
+    onShareAppMessage: function() {
+        return {
+            title: newsData.initData[this.data.newsid].title,
+            path: '/pages/news/news-detail/news-detail'
+        }
+    },
+
+    playerMusicTap: function(event) {
+        var that = this;
+        // console.log(that);
+        //播放音乐应该判断当前是否在播放
+        wx.getBackgroundAudioPlayerState({
+            success: function(res) {
+                var status = res.status;
+                console.log(status);
+                if (status != 1) {
+                    //没有在播放
+                    wx.playBackgroundAudio({
+                        dataUrl: newsData.initData[that.data.newsid].music.url,
+                        title: newsData.initData[that.data.newsid].music.title,
+                        coverImgUrl: newsData.initData[that.data.newsid].music.coverImg
+                    })
+                    that.setData({
+                        isPlayer: true
+                    })
+                } else {
+                    wx.pauseBackgroundAudio();
+                    that.setData({
+                        isPlayer: false
+                    })
+                }
+            }
         })
     }
 })

@@ -6,14 +6,14 @@
        <text class="author-name">{{authorName}}</text>
        <text class="const-text">发表于</text>
        <text class="time">{{authorDate}}</text>
+       <image bindtap="playerMusicTap" class="playermusic"  src="{{isPlayer  ? '../../../images/music(1).png' :'../../../images/music.png'}}"/>
     </view>
     <text class="title">{{title}}</text>
     <view class="tool">
         <view class="circle-img">
             <image wx:if="{{collected}}" catchtap="collectTap" src="../../../images/sc.png" />
-             <image wx:else catchtap="collectTap" src="../../../images/shoucang.png" />
-
-            <image src="../../../images/pinglun.png" class="share-img"/>
+            <image wx:else catchtap="collectTap" src="../../../images/shoucang.png" />
+            <image catchtap="onShowTap" src="../../../images/pinglun.png" class="share-img"/>
         </view>
         <view class="horizon"></view>
     </view>
