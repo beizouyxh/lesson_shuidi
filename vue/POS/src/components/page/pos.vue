@@ -35,7 +35,7 @@
            <div class="title">常用商品</div>
            <div class="often-goods-list">
              <ul>
-               <li v-for="goods in oftenGoods">
+               <li v-for="goods in oftenGoods" @click="addOrderList(goods)">
                  <span>{{goods.goodsName}}</span>
                  <span class="o-price">￥{{goods.price}}元</span>
                </li>
@@ -49,7 +49,7 @@
              <el-tab-pane label="汉堡">
                <div>
                 <ul class='cookList'>
-                  <li v-for="goods in type0Goods">
+                  <li v-for="goods in type0Goods" @click="addOrderList(goods)">
                     <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
                     <span class="foodName">{{goods.goodsName}}</span>
                     <span class="foodPrice">￥{{goods.price}}元</span>
@@ -58,13 +58,31 @@
                </div>
              </el-tab-pane>
              <el-tab-pane label="小吃">
-             小吃
+                <ul class='cookList'>
+                  <li v-for="goods in type1Goods" @click="addOrderList(goods)"> 
+                    <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
+                    <span class="foodName">{{goods.goodsName}}</span>
+                    <span class="foodPrice">￥{{goods.price}}元</span>
+                  </li>
+                </ul>
              </el-tab-pane>
              <el-tab-pane label="饮料">
-              饮料
+                <ul class='cookList'>
+                  <li v-for="goods in type2Goods" @click="addOrderList(goods)">
+                    <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
+                    <span class="foodName">{{goods.goodsName}}</span>
+                    <span class="foodPrice">￥{{goods.price}}元</span>
+                  </li>
+                </ul>
              </el-tab-pane>
              <el-tab-pane label="套餐">
-              套餐
+              <ul class='cookList'>
+                  <li v-for="goods in type3Goods" @click="addOrderList(goods)">
+                    <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
+                    <span class="foodName">{{goods.goodsName}}</span>
+                    <span class="foodPrice">￥{{goods.price}}元</span>
+                  </li>
+              </ul>
              </el-tab-pane>
            </el-tabs>
          </div>
@@ -79,26 +97,8 @@ export default {
   name:'pos',
   data(){
     return{
-      tableData:[{
-        goodsName:'香辣鸡腿堡',
-        price:15,
-        count:1
-      },{
-        goodsName:'爱心薯条',
-        price:8,
-        count:1
-      },{
-        goodsName:'甜筒',
-        price:8,
-        count:1
-      },{
-        goodsName:'墨西哥鸡肉卷',
-        price:15,
-        count:1
-      }
-
-      ],
-      oftenGoods:[
+       tableData:[],
+       oftenGoods:[
         {
           goodsId:1,
           goodsName:'香辣鸡腿堡',
@@ -150,8 +150,8 @@ export default {
           price:18
         }
       ],
-      type0Goods:[
-          {
+       type0Goods:[
+         {
               goodsId:1,
               goodsImg:"https://img.yzcdn.cn/upload_files/2015/05/05/FvN5kBeDSKF2yOEaio02J95oovM2.jpg!large.jpg",
               goodsName:'香辣鸡腿堡',
@@ -166,56 +166,100 @@ export default {
               goodsImg:"https://img.yzcdn.cn/upload_files/2015/05/05/FvN5kBeDSKF2yOEaio02J95oovM2.jpg!large.jpg",
               goodsName:'和风汉堡',
               price:15
-          }, {
-              goodsId:4,
-               goodsImg:"http://img.mp.itc.cn/upload/20161028/146fe5b12ac54577a841700d18c068a7_th.jpeg",
-              goodsName:'快乐全家桶',
-              price:80
-          }, {
-              goodsId:5,
-               goodsImg:"http://img.mp.itc.cn/upload/20170706/cc984a3914854e1893b4b8533a1f2042_th.jpg",
-              goodsName:'脆皮炸鸡腿',
-              price:10
-          }, {
-              goodsId:6,
-               goodsImg:"http://p0.ifengimg.com/pmop/2017/0904/849DB0830063C2A7717D31667CA9C70F8AF660FF_size76_w1024_h650.jpeg",
-              goodsName:'魔法鸡块',
-              price:20
-          }, {
-              goodsId:7,
-               goodsImg:"https://s3.ifanr.com/wp-content/uploads/2018/03/coke-e1520663411980.jpg!720",
-              goodsName:'可乐大杯',
-              price:10
-          }, {
-              goodsId:8,
-               goodsImg:"http://5b0988e595225.cdn.sohucs.com/images/20171021/856c85b583ba4671a2988145ac594a39.jpeg",
-              goodsName:'雪顶咖啡',
-              price:18
-          }, {
-              goodsId:9,
+          }
+      ],   
+      type1Goods:[
+         {
+              goodsId:1,
                goodsImg:"https://d10.yihaodianimg.com/N05/M02/6C/0D/CgQI01VcRqCADvLYAAXSk4H4ROY10800_640x640.jpg",
               goodsName:'大块鸡米花',
               price:15
           }, {
-              goodsId:20,
+              goodsId:2,
                goodsImg:"http://img3.21food.cn/img/album/2015/10/17/hongtaifood1446011.jpg",
               goodsName:'香脆鸡柳',
               price:17
+          },
+          {
+              goodsId:3,
+               goodsImg:"http://p0.ifengimg.com/pmop/2017/0904/849DB0830063C2A7717D31667CA9C70F8AF660FF_size76_w1024_h650.jpeg",
+              goodsName:'魔法鸡块',
+              price:20
           }
-
       ],
-    }
+      type2Goods:[
+            {
+              goodsId:1,
+               goodsImg:"https://s3.ifanr.com/wp-content/uploads/2018/03/coke-e1520663411980.jpg!720",
+              goodsName:'可乐大杯',
+              price:10
+          }, {
+              goodsId:2,
+               goodsImg:"http://5b0988e595225.cdn.sohucs.com/images/20171021/856c85b583ba4671a2988145ac594a39.jpeg",
+              goodsName:'雪顶咖啡',
+              price:18
+          }
+      ],
+      type3Goods:[
+             {
+              goodsId:1,
+               goodsImg:"http://img.mp.itc.cn/upload/20161028/146fe5b12ac54577a841700d18c068a7_th.jpeg",
+              goodsName:'快乐全家桶',
+              price:80
+        }
+      ]
+     }
   },
-  mounted:function(){
-    var orderHeight=document.body.clientHeight;
-    console.log(orderHeight);
-    document.getElementById('order-list').style.height=orderHeight+'px';
+   mounted:function(){
+      var orderHeight=document.body.clientHeight;
+      document.getElementById("order-list").style.height=orderHeight+'px';
+  },
+ methods:{
+      //添加订单列表的方法
+      addOrderList(goods){
+       
+            // this.totalCount=0; //汇总数量清0
+            // this.totalMoney=0;
+            let isHave=false;
+            //判断是否这个商品已经存在于订单列表
+            for (let i=0; i<this.tableData.length;i++){
+                console.log(this.tableData[i].goodsId);
+                if(this.tableData[i].goodsId==goods.goodsId){
+                    isHave=true; //存在
+                }
+            }
+            //根据isHave的值判断订单列表中是否已经有此商品
+            if(isHave){
+                //存在就进行数量添加
+                 let arr = this.tableData.filter(o =>o.goodsId == goods.goodsId);
+                 arr[0].count++;
+                 //console.log(arr);
+            }else{
+                //不存在就推入数组
+                let newGoods={
+                  goodsId:goods.goodsId,
+                  goodsName:goods.goodsName,
+                  price:goods.price,
+                  count:1
+                  };
+                 this.tableData.push(newGoods);
+
+            }
+
+            //进行数量和价格的汇总计算
+            // this.tableData.forEach((element) => {
+            //     this.totalCount+=element.count;
+            //     this.totalMoney=this.totalMoney+(element.price*element.count);   
+            // });
+
+      }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 .pos-order{
   background-color: #F9FAFC;
   border-right: 1px solid #C0CCDA;
@@ -256,6 +300,7 @@ export default {
        padding: 2px;
        float:left;
        margin: 2px;
+       cursor: pointer;
 
    }
    .cookList li span{

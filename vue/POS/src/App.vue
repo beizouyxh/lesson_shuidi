@@ -28,10 +28,11 @@ export default {
   color: #2c3e50;
 }
 .main{
+  
   float: left;
   width: 95%;
   background-color: #EFF2F7;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 </style>
