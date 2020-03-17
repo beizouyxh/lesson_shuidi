@@ -1,6 +1,6 @@
 <template>
   <div class="pos">
-    <el-row>
+    <!-- <el-row> -->
       <el-col :span='7' class="pos-order" id="order-list">
         <el-tabs>
            <el-tab-pane label="点餐">
@@ -11,25 +11,24 @@
                     <el-table-column prop="caozuo" label="操作" fixed="right">
                       <template>
                           <el-button type="text" size="small">添加</el-button>
-                          <el-button type="text" size="small">删除</el-button>
+                          <el-button type="text" size="small" @click="addOrderList(scope.row)">删除</el-button>
                       </template>
                     </el-table-column>
               </el-table>
+              <div class="total">
+               <small>数量：</small>{{totalCount}}   &nbsp;&nbsp;&nbsp;&nbsp;   <small> 金额：</small>{{totalMoney}}元
+              </div>
               <div class="div-btn">
                 <el-button type="warning">挂单</el-button>
                  <el-button type="danger">删除</el-button>
                   <el-button type="success">结账</el-button>
               </div>
-
            </el-tab-pane>
-
            <el-tab-pane label="挂单"></el-tab-pane>
            <el-tab-pane label="外卖"></el-tab-pane>
-
         </el-tabs>
       </el-col>
-
-
+ 
        <el-col :span="17">
          <div class="often-goods">
            <div class="title">常用商品</div>
@@ -88,11 +87,12 @@
          </div>
    
       </el-col>
-    </el-row>
-  </div>
+    <!-- </el-row> -->
+  </div> 
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name:'pos',
   data(){
@@ -207,9 +207,35 @@ export default {
               goodsName:'快乐全家桶',
               price:80
         }
-      ]
+      ],
+      totalCount:0,
+      totalMoney:0
      }
   },
+  // created:function(){
+  //    axios.get('https://www.easy-mock.com/mock/5b8b30dbf032f03c5e71de7f/kuaican/oftenGoods')
+  //    .then(reponse=>{
+  //       console.log(reponse);
+  //       this.oftenGoods=reponse.data;
+  //    })
+  //    .catch(error=>{
+  //     //  console.log(error);
+  //     alert('网络错误！');
+  //    })
+
+  //     axios.get('https://www.easy-mock.com/mock/5b8b30dbf032f03c5e71de7f/kuaican/typeGoods')
+  //    .then(reponse=>{
+  //       console.log(reponse);
+  //       this.typeGoods=reponse.data[0];
+  //       this.typeGoods=reponse.data[1];
+  //       this.typeGoods=reponse.data[2];
+  //       this.typeGoods=reponse.data[3];
+  //    })
+  //    .catch(error=>{
+  //     //  console.log(error);
+  //     alert('网络错误！');
+  //    })
+  // },
    mounted:function(){
       var orderHeight=document.body.clientHeight;
       document.getElementById("order-list").style.height=orderHeight+'px';
@@ -218,12 +244,12 @@ export default {
       //添加订单列表的方法
       addOrderList(goods){
        
-            // this.totalCount=0; //汇总数量清0
-            // this.totalMoney=0;
+            this.totalCount=0; //汇总数量清0
+            this.totalMoney=0;
             let isHave=false;
             //判断是否这个商品已经存在于订单列表
             for (let i=0; i<this.tableData.length;i++){
-                console.log(this.tableData[i].goodsId);
+                // console.log(this.tableData[i].goodsId);
                 if(this.tableData[i].goodsId==goods.goodsId){
                     isHave=true; //存在
                 }
@@ -246,11 +272,11 @@ export default {
 
             }
 
-            //进行数量和价格的汇总计算
-            // this.tableData.forEach((element) => {
-            //     this.totalCount+=element.count;
-            //     this.totalMoney=this.totalMoney+(element.price*element.count);   
-            // });
+           // 进行数量和价格的汇总计算
+            this.tableData.forEach((element) => {
+                this.totalCount+=element.count;
+                this.totalMoney=this.totalMoney+(element.price*element.count);   
+            });
 
       }
   }
@@ -281,6 +307,7 @@ export default {
   padding: 10px;
   margin: 10px;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 .o-price{
   color: #58B7FF;
@@ -321,5 +348,10 @@ export default {
        font-size: 16px;
        padding-left: 10px;
        padding-top:10px;
+   }
+   .total{
+     background-color: #fff;
+     padding: 10px;
+     border-bottom: 1px solid #D3dce6;
    }
 </style>
