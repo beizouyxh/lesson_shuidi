@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    {{this.$store.state.userInfo}}
+    <products/>
+    <cart/>
+    <!-- {{this.$store.state.userInfo}} -->
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </div>
@@ -8,11 +10,21 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+ import ProductsList from '@/components/ProductsList';
+ import ShoppingCart from '@/components/ShoppingCart';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+   'products': ProductsList ,
+   'cart':ShoppingCart
+
+  },
+   mounted(){
+     //获取商品 MVVM list展示
+    //  this.dispatch('')
+    // console.log(this.$store.state.products.all);
+    //    console.log(this.$store.state.cart.items);
   }
 }
 </script>
@@ -28,10 +40,4 @@ export default {
 }
 </style>
 
-<script>
-export default {
-  mounted(){
-    console.log(this.$store.state.products.all);
-  }
-}
-</script>
+
