@@ -41,7 +41,7 @@
 </style>
 <script>
 import ShoppingCart from '@/components/ShoppingCart';
-import ProductList from '@/components/ProductList.vue';
+// import ProductList from '@/components/ProductList';
 export default {
   mounted() {
     // 获取商品 mvvm list 展示
