@@ -10,8 +10,8 @@
                    <el-table-column prop="price" label="金额"></el-table-column>
                     <el-table-column prop="caozuo" label="操作" fixed="right">
                       <template>
-                          <el-button type="text" size="small">添加</el-button>
-                          <el-button type="text" size="small" @click="addOrderList(scope.row)">删除</el-button>
+                          <el-button type="text" size="small" @click="addOrderList(scope.row)"> 添加</el-button>
+                          <el-button type="text" size="small" @click="delSingleGoods(scope.row)">删除</el-button>
                       </template>
                     </el-table-column>
               </el-table>
@@ -20,8 +20,8 @@
               </div>
               <div class="div-btn">
                 <el-button type="warning">挂单</el-button>
-                 <el-button type="danger">删除</el-button>
-                  <el-button type="success">结账</el-button>
+                 <el-button type="danger" @click="delAllGoods">删除</el-button>
+                  <el-button type="success" @click="checkout">结账</el-button>
               </div>
            </el-tab-pane>
            <el-tab-pane label="挂单"></el-tab-pane>
@@ -268,16 +268,50 @@ export default {
                   price:goods.price,
                   count:1
                   };
-                 this.tableData.push(newGoods);
-
+                 this.tableData.push(newGoods);               
             }
+             this.tableData.forEach((element) => {
+                this.totalCount+=element.count;
+                this.totalMoney=this.totalMoney+(element.price*element.count);   
+                });
+           
 
-           // 进行数量和价格的汇总计算
+      },
+      //删除单个商品
+      delSingleGoods(goods){
+        this.tableData=this.tableData.filter(o => o.goodsId !=goos.goodsId);
+        this.getAllMoney();
+      },
+      delAllGoods(){
+       this.tableData=[];
+       this.totalCount=0;
+       this.totalMoney=0;
+      },
+     //模拟结账
+      checkout(){
+        if(this.totalCount!=0){
+            this.tableData=[];
+            this.totalCount=0;
+            this.totalMoney=0;
+            this.$message({
+              message:'结账成功！欢迎下次光临',
+              type:'success'
+            })
+        }else{
+          this.$message.error('请添加商品！');
+        }
+      },
+      //汇总数量金额
+      getAllMoney(){
+         this.totalCount=0;
+         this.totalMoney=0;
+          if(this.tableData){
+            // 进行数量和价格的汇总计算
             this.tableData.forEach((element) => {
                 this.totalCount+=element.count;
                 this.totalMoney=this.totalMoney+(element.price*element.count);   
             });
-
+          }
       }
   }
 }
