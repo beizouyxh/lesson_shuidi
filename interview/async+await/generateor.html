@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function foo() {
+            setTimeout(() => {
+                console.log(1);
+            }, 2000)
+            return 'foo';
+        }
+
+        function* test() {
+                console.log('start');
+                let a = yield foo(); //不会等着定时器两秒过后才执行往后的代码
+                console.log('a', a);
+                //a 的值？？？ 
+                //=》 undefined  与yield后面的值没有任何关系
+                //console.log('mid');
+                let b = yield 2;
+                console.log('b', b);
+                console.log('end');
+            }
+            // test();  //无法运行
+
+        // let g = test();
+        // //a 的值可以一个通过next 方法传递
+        // //next 传递的参数：就是上一个yield 的返回值
+        // console.log(g.next()); // 执行start foo() 中断 后面没调用  
+        // //插入新的任务：foo
+        // // foo();
+        // // //foo 执行完 执行下一步
+        // console.log(g.next('a value'));
+        // console.log(g.next('b value'));
+        // //generate 函数相对于普通函数而言，是可以终止的
+        // // 相比于普通函数 调用的时候 通过next一步步执行   
+        // while (g.next().done) {
+        //     g.next();
+        // }
+
+        //协程
+        function generateAutoRun(gen) {
+            let g = gen();
+
+            function next(value) {
+                let res = g.next(value);
+                if (res.done)
+                    return;
+                next(res.value);
+            }
+            next();
+
+        }
+        generateAutoRun(test);
+    </script>
+</body>
+
+</html>
