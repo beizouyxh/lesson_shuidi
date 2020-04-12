@@ -8,7 +8,7 @@ const arr = [ {age: 10}, {age: 20} ]
 //   return sum;
 // }
 let sum = arr.reduce((acc, cur) => {
-  // 0 + 10 => 10
+  // 0 + 10 => 10  acc上一次的返回值   cur当前数组的这一项（对象）
   // 10 + 20 => 30
   // => 30
   return acc + cur.age
@@ -23,7 +23,7 @@ const newArr = arr.map(e => {
 });
 console.log(newArr)
 
-// 让 2s 输出 ‘hello world’ 完成 test。
+// 让 2s 输出 ‘hello world’ 完成 test。   -------------》 回调
 function test(callback) {
   // code
   // cb -> promise -> async
