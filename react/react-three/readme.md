@@ -65,3 +65,9 @@ ts
 
   client.js  react 有什么让我么觉得不对劲的
   地方?
+
+6. react bind this
+- bind
+- constructor   this...=this.....bind(this)  this.gameLoop=this.gameLoop.bind(this)
+- ()=>
+- autobind

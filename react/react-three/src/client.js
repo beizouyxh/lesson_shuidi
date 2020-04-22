@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 // react 组件分为很多种  容器型组件  redux 
-import GameContainer from './containers/GameContainer'
+import GameContainer from './containers/GameContainer2'
 
 ReactDOM.render(
   <GameContainer/>,
