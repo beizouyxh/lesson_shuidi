@@ -13,7 +13,7 @@ export default class GameContainer extends Component {
   render() {
     const width = window.innerWidth,
       height = window.innerHeight
-    console.log(width, height)
+   
     return (
       <React3
         mainCamera="camera"
