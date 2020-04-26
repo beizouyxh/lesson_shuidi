@@ -1,5 +1,6 @@
 import styled,{ createGlobalStyle} from 'styled-components'
 import Stats from '../components/stats'
+import CountrySelector from '../components/CountrySelector'
 // css in js  js 代码里写css
 // jsx   html in js  ts react   babel preset-react
 // 首字母大写
@@ -22,6 +23,7 @@ export default function IndexPage() {
       </Wrapper> */}
 
       <Stats url="https://covid19.mathdro.id/api">></Stats>
+      <CountrySelector></CountrySelector>
     </div>
   )
 }

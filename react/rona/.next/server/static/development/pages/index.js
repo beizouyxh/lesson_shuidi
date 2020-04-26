@@ -88,10 +88,107 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./components/CountrySelector.js":
+/*!***************************************!*\
+  !*** ./components/CountrySelector.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CountrySelector; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_useStats__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/useStats */ "./utils/useStats.js");
+/* harmony import */ var _stats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./stats */ "./components/stats.js");
+var _jsxFileName = "F:\\lesson_shuidi\\react\\rona\\components\\CountrySelector.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+function CountrySelector() {
+  // vuex  useStats 数据中心
+  // useStats 被两个差不多的组件复用了， 大部分业务都是这样的
+  // 一个数据请求在mounted 发生， setStats 
+  const {
+    stats: countries,
+    loading,
+    error
+  } = Object(_utils_useStats__WEBPACK_IMPORTED_MODULE_1__["default"])('https://covid19.mathdro.id/api/countries'); // console.log(countries); //mvvm 
+
+  const {
+    0: selectedCountry,
+    1: setSelectedCountry
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('USA');
+  if (loading) return __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 23
+    }
+  }, "Loading....");
+  if (error) return __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 21
+    }
+  }, "Error....");
+  return __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 5
+    }
+  }, __jsx("h2", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 7
+    }
+  }, "Currently Showing ", selectedCountry), __jsx("select", {
+    onChange: e => {
+      setSelectedCountry(e.target.value);
+    },
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 7
+    }
+  }, countries.countries.map(country => __jsx("option", {
+    key: country.name,
+    value: country.iso3,
+    selected: country.iso3 === selectedCountry,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 13
+    }
+  }, country.iso3))), __jsx(_stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    url: `https://covid19.mathdro.id/api/countries/${selectedCountry}`,
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 7
+    }
+  }));
+} // useState  跨组件提供状态  替代  redux
+
+/***/ }),
 
 /***/ "./components/stats.js":
 /*!*****************************!*\
@@ -113,30 +210,118 @@ var _jsxFileName = "F:\\lesson_shuidi\\react\\rona\\components\\stats.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
+const StatGrid = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+`;
+const StatBlock = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  background:#f2f2f2;
+  font-size:2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+`;
 function Stats({
   url
 }) {
   const {
     stats,
-    loading
-  } = Object(_utils_useStats__WEBPACK_IMPORTED_MODULE_2__["default"])(url); //   console.log(stats)
+    loading,
+    error
+  } = Object(_utils_useStats__WEBPACK_IMPORTED_MODULE_2__["default"])(url); // console.log(stats)
 
   if (loading) return __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 7,
-      columnNumber: 20
+      lineNumber: 24,
+      columnNumber: 23
     }
-  }, "loading....");
-  return __jsx("div", {
+  }, "Loading...");
+  if (error) return __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9,
+      lineNumber: 25,
+      columnNumber: 21
+    }
+  }, "\u51FA\u9519\u4E86..."); // ajax  loading false 
+
+  return __jsx(StatGrid, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
       columnNumber: 5
     }
-  }, stats);
+  }, __jsx(StatBlock, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 7
+    }
+  }, __jsx("h3", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 9
+    }
+  }, "Confirmed:"), __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31,
+      columnNumber: 8
+    }
+  }, stats.confirmed.value)), __jsx(StatBlock, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 33,
+      columnNumber: 7
+    }
+  }, __jsx("h3", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 34,
+      columnNumber: 9
+    }
+  }, "Deaths:"), __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 9
+    }
+  }, stats.deaths.value)), __jsx(StatBlock, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 37,
+      columnNumber: 7
+    }
+  }, __jsx("h3", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 9
+    }
+  }, "Recovered:"), __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, stats.recovered.value)));
 }
 
 /***/ }),
@@ -156,9 +341,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_stats__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/stats */ "./components/stats.js");
+/* harmony import */ var _components_CountrySelector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/CountrySelector */ "./components/CountrySelector.js");
 var _jsxFileName = "F:\\lesson_shuidi\\react\\rona\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
  // css in js  js 代码里写css
 // jsx   html in js  ts react   babel preset-react
@@ -177,14 +364,14 @@ function IndexPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 5
     }
   }, "Next , ssr in react!", __jsx("createGlobalStyle", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 9
     }
   }), __jsx(_components_stats__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -192,10 +379,17 @@ function IndexPage() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 7
     }
-  }, ">"));
+  }, ">"), __jsx(_components_CountrySelector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 7
+    }
+  }));
 }
 
 /***/ }),
@@ -209,19 +403,20 @@ function IndexPage() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Stats; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return useStats; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- //共享状态的useState 的方法
+ //共享状态的useState 方法 rect hooks
 
-function Stats({
-  url
-}) {
-  //    console.log(url);
+function useStats(url) {
+  // console.log(url);
+  // from input 双向绑定新写法 
+  // react 很多写法都淘汰了
   const {
     0: stats,
     1: setStats
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(); // 加载ajax loading
+
   const {
     0: loading,
     1: setLoading
@@ -229,13 +424,37 @@ function Stats({
   const {
     0: error,
     1: setError
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
-  return stats, loading, error;
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(); // 封装state 的处理
+  // react hooks 还有什么函数，可以在订阅了useState的
+  // 组件 挂载上去后， 立即执行？ mounted() 
+  // useEffect 相当于生命周期函数， 
+  // state + lifecycle  -> react hooks  重要性
+  // 独立到一个模块
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    //  console.log('mounted'); 
+    async function fectchData() {
+      setLoading(true);
+      const data = await fetch(url).then(res => res.json()).catch(err => {
+        setError(err);
+      }); // console.log(data);
+
+      setStats(data);
+      setLoading(false);
+    }
+
+    fectchData();
+  }, [url]);
+  return {
+    stats,
+    loading,
+    error
+  };
 }
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/
