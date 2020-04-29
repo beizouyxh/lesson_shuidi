@@ -14,7 +14,7 @@ export default [{
       path: "/",
       exact: true,
       render: () => (
-        <Redirect to={"/recommend"}/>
+        <Redirect to={"Singers"}/>
       )
     },
     {

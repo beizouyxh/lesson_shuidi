@@ -7,3 +7,12 @@
 
 
 3. 全家桶
+
+
+
+5. tabbar 怎么做？
+  两种东西 静态的  srtled-components
+           动态的    redux + api
+
+6. 幻灯片   最佳实战怎么做？
+  1. 数据
