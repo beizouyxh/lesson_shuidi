@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj={
+            name:null
+        }
+
+        // new Promise((resolve,reject)=>{
+        //        reject('error');
+        // })
+
+
+
+        // 1.错误捕获  只能捕获同步的错误
+        try{
+            setTimeout(()=>{
+                obj.name.a=13;
+            },1000)    
+        }catch(error){
+            错误发生到服务端
+            console.log(error)
+        }
+        console.log(123456);
+
+        //2. 意料之外  全局捕获
+        //JS： EAMA(js:词法语法语句表达式) + DOM(html元素类型)
+        //  事件模式（流）：捕获 冒泡
+        window.addEventListener('error',function(err){
+            console.log(err)
+        },false)
+
+        //3. promise
+        new Promise((resolve,reject)=>{
+               reject('error');
+        })
+        window.addEventListener('unhandlerejection',function(err){
+            console,log(err);
+        })
+    </script>
+</body>
+</html>
