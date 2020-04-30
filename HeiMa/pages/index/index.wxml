@@ -1,0 +1,19 @@
+<view class="pyg_index">
+    <SearchInput></SearchInput>
+    <view class="index_swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoPlay}}" interval="{{interval}}" circular="{{circular}}">
+            <swiper-item>
+                <image src="https://img11.360buyimg.com/pop/s590x470_jfs/t1/86421/36/19500/69866/5ea00bc9E47d2877c/ae127519187467d4.jpg.webp"></image>
+            </swiper-item>
+            <swiper-item>
+                <image src="https://imgcps.jd.com/ling/100012223322/5ri45oiP5aW954mp5o2i5paw/54iG5qy-5Lqn5ZOB5L2O6IezNeaKmA/p-5bd8253082acdd181d02fa28/bbeb3e30.jpg"></image>
+            </swiper-item>
+            <swiper-item>
+                <image src="https://img10.360buyimg.com/pop/s590x470_jfs/t1/100724/25/13655/143851/5e5cd4efE21c52772/a87247fe7de10308.jpg.webp"></image>
+            </swiper-item>
+            <swiper-item>
+                <image src="https://img20.360buyimg.com/pop/s590x470_jfs/t1/116146/38/3332/55804/5ea77bc5E31b967d6/0eba2c7dacdb7e7e.jpg.webp"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>

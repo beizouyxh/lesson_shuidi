@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
-  "navigationBarBackgroundColor": "#0094ff"
+  "usingComponents": {
+    "SearchInput":"../../components/SearchInput/SearchInput"
+  },
+  "navigationBarTitleText": "优购首页"
+ 
 }
