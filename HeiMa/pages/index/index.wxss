@@ -6,3 +6,18 @@ swiper{
 image{
   width: 100%;
 }
+.index_cate{
+  margin-top: 10rpx;
+  display: flex;
+  height: 180rpx;
+}
+navigator{
+  flex: 1;
+  /* padding-right: 10rpx; */
+}
+navigator image{
+  width: 100%;
+  height: 100%;
+  text-align: center;   
+  padding: 10rpx 10rpx 40rpx 10rpx;
+}

@@ -16,4 +16,13 @@
             </swiper-item>
         </swiper>
     </view>
+
+    <view class="index_cate">
+        <navigator>
+            <image src="../../images/fl.png" >分类</image>
+             <image src="../../images/mss.png">秒杀拍</image>
+             <image src="../../images/cs.png">超市购</image>
+            <image src="../../images/my.png">母婴品</image>
+        </navigator>
+    </view>
 </view>
