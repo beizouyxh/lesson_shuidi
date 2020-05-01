@@ -1,13 +1,13 @@
 import React from 'react'
 import '../public/style/components/Header.css'
-
-import {Row,Col, Menu, Icon} from 'antd'
+// import { Icon } from '@ant-design/compatible';
+import {Row,Col, Menu,Icon} from 'antd'
 const Header = () => (
   <div className="header">
     <Row type="flex" justify="center">
-        <Col   xs={24} sm={24} md={10} lg={15} xl={12}>
-            <span className="header-logo">技术胖</span>
-            <span className="header-txt">专注前端开发,每年100集免费视频。</span>
+        <Col  xs={24} sm={24} md={10} lg={10} xl={10}>
+            <span className="header-logo">北走</span>
+            <span className="header-txt">专注前端开发！</span>
         </Col>
 
         <Col className="memu-div" xs={0} sm={0} md={14} lg={8} xl={6}>
