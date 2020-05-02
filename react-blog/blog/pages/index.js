@@ -2,8 +2,15 @@ import React,{useState} from 'react'
 import Head from 'next/head'
 import Header from '../components/Header'
 import {Row, Col , List,Icon} from 'antd'
+
 import Author from '../components/Author'
-import '../public/style/index.css'
+import Advert from '../components/Advert'
+import Footer from '../components/Footer'
+
+
+import '../public/style/comm.css'
+
+
 const Home = () => {
    const [ mylist , setMylist ] = useState(
       [
@@ -42,8 +49,10 @@ const Home = () => {
          </Col>
          <Col className="comm-right" xs={0} sm={0} md={7} lg={5} xl={4}>
              <Author  />
+             <Advert />
          </Col>
     </Row>
+    <Footer/>
    </div>
  )
 }
