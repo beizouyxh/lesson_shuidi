@@ -41,6 +41,7 @@ module.exports = appInfo => {
     // load into agent, default is close
     agent: false,
   };
+  
   config.security={
     scrf:{
       enable:false
