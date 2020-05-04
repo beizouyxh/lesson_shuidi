@@ -1,10 +1,18 @@
-import React from 'react'
+
 import '../public/style/components/Header.css'
+import React ,{useState,useEffect} from 'react'
+import Router from 'next/router'
+import Link from 'next/link'
+import axios from 'axios'
+import  servicePath  from '../config/apiUrl'
 // import { Icon } from '@ant-design/compatible';
 import {Row,Col, Menu,Icon} from 'antd'
-const Header = () => (
-  <div className="header">
-    <Row type="flex" justify="center">
+const Header = () => {
+
+    
+    return(
+     <div className="header">
+       <Row type="flex" justify="center">
         <Col  xs={24} sm={24} md={10} lg={10} xl={10}>
             <span className="header-logo">北走</span>
             <span className="header-txt">专注前端开发！</span>
@@ -28,6 +36,7 @@ const Header = () => (
         </Col>
     </Row>
  </div>
-)
+    )
+}
 
 export default Header
