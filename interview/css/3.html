@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./button.css">
+</head>
+<body>
+    <!-- this 在js 里面很灵活，css  -->
+    <button class="button">按钮</button>
+    <script>
+        // 如何使用纯css 做抛物线 ,
+        // 1.环形渐变实现可交互的特效按钮
+        // 2. js mousemove事件    通过mousemove 事件来获取鼠标的偏移
+        // 3. css 变量 js 改变
+        // 4. trasition
+        document.querySelector('.button').onmousemove=(e)=>{
+            const x = e.pageX-e.target.offsetLeft;
+            const y=e.pageY-e.target.offsetTop;
+            e.target.style.setProperty('--x',`${x}px`);
+            e.target.style.setProperty('--y',`${y}px`);
+
+
+        }
+    </script>
+</body>
+</html>
