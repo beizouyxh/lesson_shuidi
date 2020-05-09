@@ -4,11 +4,12 @@ import { Card, Input,Button ,Spin,message } from 'antd';
 import "../public/style/Login.css";
 import servicePath from '../config/apiUrl'
 import axios from 'axios'
+
 function Login(props){
     const [userName , setUserName] = useState('')
     const [password , setPassword] = useState('')
     const [isLoading,setIsLoading] = useState(false)
-    const checkLogin = (props) => {
+    const checkLogin = () => {
         setIsLoading(true)
           if (!userName) {
             message.error("请输入用户名");
@@ -28,21 +29,21 @@ function Login(props){
               'password':password
           }
           axios({
-              method:'post',
-              url:servicePath.checkLogin,
-              data:dataProps,
-              withCredentials:true   //共享session
-          }).then(
-              res=>{
-                  setIsLoading(false)
-                  if(res.data.data=="登录成功"){
-                      localStorage.setItem('openId',res.data.openId)
-                      props.history.push('/index')
-                  }else{
-                      message.error('用户名或密码错误')
-                  }
-              }
-          )
+            method:'post',
+            url:servicePath.checkLogin,
+            data:dataProps,
+            withCredentials: true
+        }).then(
+           res=>{
+                setIsLoading(false)
+                if(res.data.data=='登录成功'){
+                    localStorage.setItem('openId',res.data.openId)
+                    props.history.push('/index')
+                }else{
+                    message.error('用户名密码错误')
+                }
+           }
+        )
       }
     return (
         <div className="login-div">
