@@ -11,7 +11,7 @@ class MainController extends Controller{
    
  //判断用户名密码是否正确
   async checkLogin(){
-    let userName = this.ctx.request.body.userName
+    let userName = this.ctx.request.body.userName       
     let password = this.ctx.request.body.password
     const sql = " SELECT userName FROM admin_user WHERE userName = '"+userName +
                 "' AND password = '"+password+"'"
@@ -26,7 +26,25 @@ class MainController extends Controller{
     }else{
         this.ctx.body={data:'登录失败'}
     } 
-}
+  }
+  async getTypeInfo(){
+      const resType=await this.app.mysql.select('type')
+      this.ctx.body={data:resType}
+  }
+    //添加文章
+    async addArticle(){
+  
+      let tmpArticle= this.ctx.request.body
+    // tmpArticle.
+    const result = await this.app.mysql.insert('article',tmpArticle)
+    const insertSuccess = result.affectedRows === 1
+    const insertId = result.insertId
+
+    this.ctx.body={
+        isScuccess:insertSuccess,
+        insertId:insertId
+    }
+   }
 }
 
 module.exports=MainController
