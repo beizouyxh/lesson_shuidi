@@ -124,6 +124,27 @@ function AddArticle(props){
 
             }
         )
+    }else{
+        console.log('articleId:'+articleId)
+        dataProps.id = articleId 
+        axios({
+            method:'post',
+            url:servicePath.updateArticle,
+            header:{ 'Access-Control-Allow-Origin':'*' },
+            data:dataProps,
+            withCredentials: true
+        }).then(
+           res=>{
+
+            if(res.data.isScuccess){
+                message.success('文章保存成功')
+            }else{
+                message.error('保存失败');
+            }
+
+
+           }
+        )
     }
         
     }
@@ -132,19 +153,21 @@ function AddArticle(props){
         message.success(id)
         axios(servicePath.getArticleById+id,{ 
             withCredentials: true,
-            header:{ 'Access-Control-Allow-Origin':'*' }
+            // header:{ 'Access-Control-Allow-Origin':'*' }
         }).then(
             res=>{
-                //let articleInfo= res.data.data[0]
-                setArticleTitle(res.data.data[0].title)
-                setArticleContent(res.data.data[0].article_content)
-                let html=marked(res.data.data[0].article_content)
+               
+                let articleInfo= res.data.data[0]
+                console.log(articleInfo)
+                setArticleTitle(articleInfo.title)
+                setArticleContent(articleInfo.article_content)
+                let html=marked(articleInfo.article_content)
                 setMarkdownContent(html)
-                setIntroducemd(res.data.data[0].introduce)
-                let tmpInt = marked(res.data.data[0].introduce)
+                setIntroducemd(articleInfo.introduce)
+                let tmpInt = marked(articleInfo.introduce)
                 setIntroducehtml(tmpInt)
-                setShowDate(res.data.data[0].addTime)
-                setSelectType(res.data.data[0].typeId)
+                setShowDate(articleInfo.addTime)
+                setSelectType(articleInfo.typeId)
     
             }
         )
