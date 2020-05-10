@@ -5,9 +5,7 @@ import {
     PieChartOutlined,
     UserOutlined,
     CommentOutlined,
-    ProfileOutlined,
-    SmileOutlined,
-    PropertySafetyFilled,
+   
   } from "@ant-design/icons";
   import {Route} from 'react-router-dom'
   import AddArticle from './AddArticle'
@@ -40,9 +38,9 @@ function AdminIndex(props){
       <Menu.Item key="1" icon={<PieChartOutlined />}>
           <span>工作台</span>
         </Menu.Item>
-        <Menu.Item key="2" icon={<PieChartOutlined /> }>
+        {/* <Menu.Item key="2" icon={<PieChartOutlined /> }>
           <span>添加文章</span>
-        </Menu.Item>
+        </Menu.Item> */}
        <SubMenu
           key="sub1"
           onClick={handleClickArticle}
@@ -76,6 +74,7 @@ function AdminIndex(props){
               <Route path="/index/" exact  component={AddArticle} />
               <Route path="/index/add" exact  component={AddArticle} />
               <Route path="/index/list" exact  component={ArticleList} />
+              <Route path="/index/add/:id" exact  component={AddArticle} />
             </div>
             
         </div>

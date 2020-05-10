@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import '../public/style/ArticleList.css'
-import { List ,Row ,Col , Modal ,message ,Button,Switch} from 'antd';
+import { List ,Row ,Col , Modal ,message ,Button} from 'antd';
 import axios from 'axios'
 import  servicePath  from '../config/apiUrl'
 const { confirm } = Modal;
@@ -10,7 +10,7 @@ function ArticleList(props){
     useEffect(()=>{
         getList()     
     },[])
-
+    //获得文章
     const getList=()=>{
         axios({
             method:'get',
@@ -43,6 +43,10 @@ function ArticleList(props){
           })
     }
 
+    //修改文章的跳转方法
+    const updateArticle=(id)=>{
+        props.history.push('/index/add/'+id)
+    }
 
 
     return(
@@ -89,7 +93,7 @@ function ArticleList(props){
                         </Col>
 
                         <Col span={4}>
-                          <Button type="primary" >修改</Button>&nbsp;
+                          <Button type="primary" onClick={()=>{updateArticle(item.id)}}>修改</Button>&nbsp;
 
                           <Button onClick={()=>{delArticle(item.id)}}>删除 </Button>
                         </Col>

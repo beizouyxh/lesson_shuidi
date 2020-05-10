@@ -4,7 +4,7 @@ import '../public/style/AddArticle.css'
 import { Row ,Input, Button, Col,Select,DatePicker, message} from 'antd'
 import axios from 'axios'
 import servicePath from '../config/apiUrl'
-import { PropertySafetyFilled } from '@ant-design/icons'
+
 const { Option } = Select
 const { TextArea } = Input
 
@@ -16,12 +16,18 @@ function AddArticle(props){
     const [introducemd,setIntroducemd] = useState()            //简介的markdown内容
     const [introducehtml,setIntroducehtml] = useState('等待编辑') //简介的html内容
     const [showDate,setShowDate] = useState()   //发布日期
-    const [updateDate,setUpdateDate] = useState() //修改日志的日期
+    // const [updateDate,setUpdateDate] = useState() //修改日志的日期
     const [typeInfo ,setTypeInfo] = useState([]) // 文章类别信息
     const [selectedType,setSelectType] = useState('请选择类型') //选择的文章类别
 
     useEffect(()=>{
-         getTypeInfo()
+        getTypeInfo()
+        //获得文章ID
+        let tmpId = props.match.params.id
+        if(tmpId){
+            setArticleId(tmpId)
+            getArticleById(tmpId)
+        } 
     },[])
 
     marked.setOptions({
@@ -68,6 +74,8 @@ function AddArticle(props){
         setSelectType(value)
     }
 
+    
+
     const saveArticle=()=>{
         if(!typeInfo){
             message.error('请选择文章类型')
@@ -95,8 +103,8 @@ function AddArticle(props){
         dataProps.introduce =introducemd
          let datetext= showDate.replace('-','/') //把字符串转换成时间戳
         dataProps.addTime =(new Date(datetext).getTime())/1000
-
-
+        // message.success(articleId)
+        
         if(articleId==0){
         console.log('articleId=:'+articleId)
         dataProps.view_count =Math.ceil(Math.random()*100)+1000
@@ -118,7 +126,32 @@ function AddArticle(props){
         )
     }
         
-  }
+    }
+
+    const getArticleById = (id)=>{
+        message.success(id)
+        axios(servicePath.getArticleById+id,{ 
+            withCredentials: true,
+            header:{ 'Access-Control-Allow-Origin':'*' }
+        }).then(
+            res=>{
+                //let articleInfo= res.data.data[0]
+                setArticleTitle(res.data.data[0].title)
+                setArticleContent(res.data.data[0].article_content)
+                let html=marked(res.data.data[0].article_content)
+                setMarkdownContent(html)
+                setIntroducemd(res.data.data[0].introduce)
+                let tmpInt = marked(res.data.data[0].introduce)
+                setIntroducehtml(tmpInt)
+                setShowDate(res.data.data[0].addTime)
+                setSelectType(res.data.data[0].typeId)
+    
+            }
+        )
+    }
+    
+
+   
     return(
         <div>
              <Row gutter={5}>
@@ -151,6 +184,7 @@ function AddArticle(props){
                                className="markdown-content"
                                rows={35}
                                placeholder="文章内容"
+                               value={articleContent}
                                onChange={changeContent}
                             />
                         </Col>
@@ -175,6 +209,7 @@ function AddArticle(props){
                             <TextArea 
                               rows={4} 
                               placeholder="文章简介"
+                              value={introducemd}
                               onChange={changeIntroudce}
                             />
                             <br/><br/>
