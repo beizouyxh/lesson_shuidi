@@ -1,0 +1,70 @@
+2020-05-12 15:46:51,285 INFO 2604 [egg:logger] init all loggers with options: {"dir":"F:\\lesson_shuidi\\interview\\swagger\\swagger-egg\\logs\\swagger-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"swagger-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-05-12 15:46:51,354 INFO 2604 [egg-multipart] stream mode enable
+2020-05-12 15:46:51,461 INFO 2604 [egg-static] starting static serve /public/ -> F:\lesson_shuidi\interview\swagger\swagger-egg\app\public
+2020-05-12 15:46:51,466 INFO 2604 [egg-security] use csrf middleware
+2020-05-12 15:46:51,468 INFO 2604 [egg-security] use methodnoallow middleware
+2020-05-12 15:46:51,469 INFO 2604 [egg-security] use noopen middleware
+2020-05-12 15:46:51,470 INFO 2604 [egg-security] use nosniff middleware
+2020-05-12 15:46:51,471 INFO 2604 [egg-security] use xssProtection middleware
+2020-05-12 15:46:51,471 INFO 2604 [egg-security] use xframe middleware
+2020-05-12 15:46:51,472 INFO 2604 [egg-security] use dta middleware
+2020-05-12 15:46:51,473 INFO 2604 [egg-security] compose 7 middlewares into one security middleware
+2020-05-12 15:46:51,484 INFO 2604 [egg:core] dump config after load, 9ms
+2020-05-12 15:46:51,504 INFO 2604 [egg-watcher:application] watcher start success
+2020-05-12 15:46:51,516 INFO 2604 [egg:core] dump config after ready, 9ms
+2020-05-12 15:52:33,584 INFO 19240 [egg:logger] init all loggers with options: {"dir":"F:\\lesson_shuidi\\interview\\swagger\\swagger-egg\\logs\\swagger-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"swagger-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-05-12 15:52:33,623 INFO 19240 [egg-multipart] stream mode enable
+2020-05-12 15:52:33,723 INFO 19240 [egg-static] starting static serve /public/ -> F:\lesson_shuidi\interview\swagger\swagger-egg\app\public
+2020-05-12 15:52:33,726 INFO 19240 [egg-security] use csrf middleware
+2020-05-12 15:52:33,727 INFO 19240 [egg-security] use methodnoallow middleware
+2020-05-12 15:52:33,729 INFO 19240 [egg-security] use noopen middleware
+2020-05-12 15:52:33,730 INFO 19240 [egg-security] use nosniff middleware
+2020-05-12 15:52:33,732 INFO 19240 [egg-security] use xssProtection middleware
+2020-05-12 15:52:33,733 INFO 19240 [egg-security] use xframe middleware
+2020-05-12 15:52:33,734 INFO 19240 [egg-security] use dta middleware
+2020-05-12 15:52:33,734 INFO 19240 [egg-security] compose 7 middlewares into one security middleware
+2020-05-12 15:52:33,744 INFO 19240 [egg:core] dump config after load, 8ms
+2020-05-12 15:52:33,760 INFO 19240 [egg-watcher:application] watcher start success
+2020-05-12 15:52:33,770 INFO 19240 [egg:core] dump config after ready, 8ms
+2020-05-12 15:58:25,502 INFO 4836 [egg:logger] init all loggers with options: {"dir":"F:\\lesson_shuidi\\interview\\swagger\\swagger-egg\\logs\\swagger-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"swagger-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-05-12 15:58:25,552 INFO 4836 [egg-multipart] stream mode enable
+2020-05-12 15:58:25,691 INFO 4836 [egg-static] starting static serve /public/ -> F:\lesson_shuidi\interview\swagger\swagger-egg\app\public
+2020-05-12 15:58:25,700 INFO 4836 [egg-security] use csrf middleware
+2020-05-12 15:58:25,701 INFO 4836 [egg-security] use methodnoallow middleware
+2020-05-12 15:58:25,702 INFO 4836 [egg-security] use noopen middleware
+2020-05-12 15:58:25,705 INFO 4836 [egg-security] use nosniff middleware
+2020-05-12 15:58:25,706 INFO 4836 [egg-security] use xssProtection middleware
+2020-05-12 15:58:25,707 INFO 4836 [egg-security] use xframe middleware
+2020-05-12 15:58:25,708 INFO 4836 [egg-security] use dta middleware
+2020-05-12 15:58:25,708 INFO 4836 [egg-security] compose 7 middlewares into one security middleware
+2020-05-12 15:58:25,726 INFO 4836 [egg:core] dump config after load, 14ms
+2020-05-12 15:58:25,743 INFO 4836 [egg-watcher:application] watcher start success
+2020-05-12 15:58:25,772 INFO 4836 [egg:core] dump config after ready, 26ms
+2020-05-12 16:04:50,872 INFO 12500 [egg:logger] init all loggers with options: {"dir":"F:\\lesson_shuidi\\interview\\swagger\\swagger-egg\\logs\\swagger-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"swagger-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-05-12 16:04:50,935 INFO 12500 [egg-multipart] stream mode enable
+2020-05-12 16:04:51,104 INFO 12500 [egg-static] starting static serve /public/ -> F:\lesson_shuidi\interview\swagger\swagger-egg\app\public
+2020-05-12 16:04:51,109 INFO 12500 [egg-security] use csrf middleware
+2020-05-12 16:04:51,111 INFO 12500 [egg-security] use methodnoallow middleware
+2020-05-12 16:04:51,113 INFO 12500 [egg-security] use noopen middleware
+2020-05-12 16:04:51,116 INFO 12500 [egg-security] use nosniff middleware
+2020-05-12 16:04:51,117 INFO 12500 [egg-security] use xssProtection middleware
+2020-05-12 16:04:51,119 INFO 12500 [egg-security] use xframe middleware
+2020-05-12 16:04:51,120 INFO 12500 [egg-security] use dta middleware
+2020-05-12 16:04:51,120 INFO 12500 [egg-security] compose 7 middlewares into one security middleware
+2020-05-12 16:04:51,143 INFO 12500 [egg:core] dump config after load, 14ms
+2020-05-12 16:04:51,165 INFO 12500 [egg-watcher:application] watcher start success
+2020-05-12 16:04:51,177 INFO 12500 [egg:core] dump config after ready, 10ms
+2020-05-12 16:05:44,555 INFO 1116 [egg:logger] init all loggers with options: {"dir":"F:\\lesson_shuidi\\interview\\swagger\\swagger-egg\\logs\\swagger-egg","encoding":"utf8","env":"local","level":"INFO","consoleLevel":"INFO","disableConsoleAfterReady":false,"outputJSON":false,"buffer":true,"appLogName":"swagger-egg-web.log","coreLogName":"egg-web.log","agentLogName":"egg-agent.log","errorLogName":"common-error.log","coreLogger":{"consoleLevel":"WARN"},"allowDebugAtProd":false,"type":"application"}
+2020-05-12 16:05:44,591 INFO 1116 [egg-multipart] stream mode enable
+2020-05-12 16:05:44,680 INFO 1116 [egg-static] starting static serve /public/ -> F:\lesson_shuidi\interview\swagger\swagger-egg\app\public
+2020-05-12 16:05:44,683 INFO 1116 [egg-security] use csrf middleware
+2020-05-12 16:05:44,684 INFO 1116 [egg-security] use methodnoallow middleware
+2020-05-12 16:05:44,685 INFO 1116 [egg-security] use noopen middleware
+2020-05-12 16:05:44,688 INFO 1116 [egg-security] use nosniff middleware
+2020-05-12 16:05:44,689 INFO 1116 [egg-security] use xssProtection middleware
+2020-05-12 16:05:44,689 INFO 1116 [egg-security] use xframe middleware
+2020-05-12 16:05:44,691 INFO 1116 [egg-security] use dta middleware
+2020-05-12 16:05:44,692 INFO 1116 [egg-security] compose 7 middlewares into one security middleware
+2020-05-12 16:05:44,707 INFO 1116 [egg:core] dump config after load, 8ms
+2020-05-12 16:05:44,721 INFO 1116 [egg-watcher:application] watcher start success
+2020-05-12 16:05:44,734 INFO 1116 [egg:core] dump config after ready, 11ms

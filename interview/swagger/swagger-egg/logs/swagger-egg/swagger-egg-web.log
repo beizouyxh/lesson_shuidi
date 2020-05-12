@@ -1,0 +1,60 @@
+2020-05-12 15:47:48,436 ERROR 2604 [-/127.0.0.1/-/126ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 2604
+hostname: LAPTOP-M6I1EUAJ
+
+2020-05-12 15:51:31,013 ERROR 2604 [-/127.0.0.1/-/47ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 2604
+hostname: LAPTOP-M6I1EUAJ
+
+2020-05-12 15:52:17,580 ERROR 2604 [-/127.0.0.1/-/2ms GET /] nodejs.Error: Please set config.keys first
+    at Application.get keys [as keys] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg\lib\application.js:266:15)
+    at Object.get cookies [as cookies] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg\app\extend\context.js:22:66)
+    at Object.get [egg-security#CSRF_SECRET] (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:91:35)
+    at Object.ensureCsrfSecret (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\app\extend\context.js:104:13)
+    at csrf (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-security\lib\middlewares\csrf.js:15:11)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:34:12
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+    at session (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-session\index.js:41:13)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\koa-compose\index.js:42:32)
+
+pid: 2604
+hostname: LAPTOP-M6I1EUAJ
+
+2020-05-12 16:04:56,969 ERROR 12500 [-/127.0.0.1/-/16ms GET /] nodejs.TypeError: Cannot set property 'body' of undefined
+    at HomeController.index (F:\lesson_shuidi\interview\swagger\swagger-egg\app\controller\home.js:4:22)
+    at Object.callFn (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-core\lib\utils\index.js:44:21)
+    at Object.classControllerMiddleware (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-core\lib\loader\mixin\controller.js:87:20)
+    at Object.callFn (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\lib\utils.js:12:21)
+    at wrappedController (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\lib\egg_router.js:322:18)
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at next (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\node_modules\koa-compose\index.js:45:18)
+    at F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\lib\router.js:190:18
+    at dispatch (F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\node_modules\koa-compose\index.js:44:32)
+    at F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\@eggjs\router\node_modules\koa-compose\index.js:36:12
+
+pid: 12500
+hostname: LAPTOP-M6I1EUAJ
+

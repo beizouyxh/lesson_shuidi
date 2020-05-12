@@ -1,0 +1,24 @@
+2020-05-12 15:46:51,527 INFO 15876 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 45788477ms at 2020-05-13 04:30:00.004
+2020-05-12 15:46:51,527 INFO 15876 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 29588473ms at 2020-05-13 00:00:00.000
+2020-05-12 15:46:51,528 INFO 15876 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 29589473ms at 2020-05-13 00:00:01.001
+2020-05-12 15:46:51,353 INFO 2604 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2020-05-12 15:46:51,353 INFO 2604 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js
+2020-05-12 15:46:51,353 INFO 2604 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2020-05-12 15:52:33,780 INFO 22784 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 45446224ms at 2020-05-13 04:30:00.004
+2020-05-12 15:52:33,780 INFO 22784 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 29246220ms at 2020-05-13 00:00:00.000
+2020-05-12 15:52:33,781 INFO 22784 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 29247220ms at 2020-05-13 00:00:01.001
+2020-05-12 15:52:33,622 INFO 19240 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2020-05-12 15:52:33,622 INFO 19240 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js
+2020-05-12 15:52:33,622 INFO 19240 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2020-05-12 15:58:25,551 INFO 4836 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2020-05-12 15:58:25,551 INFO 4836 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js
+2020-05-12 15:58:25,551 INFO 4836 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2020-05-12 16:04:50,934 INFO 12500 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2020-05-12 16:04:50,934 INFO 12500 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js
+2020-05-12 16:04:50,934 INFO 12500 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
+2020-05-12 16:04:51,188 INFO 22928 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js next time will execute after 44708816ms at 2020-05-13 04:30:00.004
+2020-05-12 16:04:51,188 INFO 22928 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js next time will execute after 28508812ms at 2020-05-13 00:00:00.000
+2020-05-12 16:04:51,189 INFO 22928 [Timer] F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js next time will execute after 28509812ms at 2020-05-13 00:00:01.001
+2020-05-12 16:05:44,590 INFO 1116 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-multipart\app\schedule\clean_tmpdir.js
+2020-05-12 16:05:44,590 INFO 1116 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\clean_log.js
+2020-05-12 16:05:44,590 INFO 1116 [egg-schedule]: register schedule F:\lesson_shuidi\interview\swagger\swagger-egg\node_modules\egg-logrotator\app\schedule\rotate_by_file.js
