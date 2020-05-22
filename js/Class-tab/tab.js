@@ -3,23 +3,36 @@ class Tab{
    constructor(id){
       //获取元素
       that=this;
-      this.main= document.querySelector(id)
-      this.lis=this.main.querySelectorAll('li')
-      this.sections=this.main.querySelectorAll('section')
+      this.main= document.querySelector(id)      
       this.add=this.main.querySelector('.tabadd')
+   
       //li 的父元素
       this.ul=this.main.querySelector('.fisrstnav  ul:first-child');
+      //section 的父元素
+      this.fsection=this.main.querySelector('.tabscon')
    }
-   init(){
-       //init 初始化操作让相关的元素绑定事件
+   //因为我们动态添加元素 需要从新的获取相应的元素
+   updateNode(){
+    this.lis=this.main.querySelectorAll('li')
+    this.sections=this.main.querySelectorAll('section')   
+    this.remove=this.main.querySelectorAll('.icon-guanbi')
+    this.spans=this.main.querySelectorAll('.fisrstnav li span:first-child')
+   }
+   //init 初始化操作让相关的元素绑定事件
+   init(){      
+       this.updateNode();
        this.add.onclick=this.addTab;
        for(let i=0; i<this.lis.length;i++){
            this.lis[i].index=i;
+           //为li 添加点击事件  调用切换功能
            this.lis[i].onclick=this.toggleTab;
-            //    console.log(this.index)
+           //为icon-guanbi 添加点击事件 调用删除功能
+            this.remove[i].onclick=this.removeTab;
+            this.spans[i].ondblclick=this.updateTab;
            
        }
    }
+   
 //    1.切换功能
    toggleTab(){
     //  console.log(this.index)
@@ -27,6 +40,7 @@ class Tab{
      this.className='liactive'
      that.sections[this.index].className='conactive'
    }
+   //  清除
    clearClass(){
        for(let i=0;i<this.lis.length;i++){
            this.lis[i].className=''
@@ -35,18 +49,51 @@ class Tab{
    }
 //    2.添加功能
    addTab(){
+       that.clearClass();
     //1. 创建li元素和section元素
+    var random=Math.random();
     var li=' <li class="liactive"><span>新选项卡</span><span class="iconfont icon-guanbi"></span></li>'
+    var section=' <section class="conactive">测试 '+random+' </section>'
     //2.把这两个元素追加到相应的父元素里面
     that.ul.insertAdjacentHTML('beforeend',li);
+    that.fsection.insertAdjacentHTML('beforeend',section)
+     //为后添加的li 和section 添加绑定事件
+    that.init();
 }
  //   3. 删除功能
-   removeTab(){
-
+   removeTab(e){
+       e.stopPropagation();    //阻止冒泡  防止触发li 的切换点击事件
+       //获得当前的索引
+     var index=this.parentNode.index
+     console.log(index) 
+     //根据索引删除对应的li 和 section   remove()方法可以直接删除指定的元素
+      that.lis[index].remove()
+      that.sections[index].remove()
+      that.init()
+      //当我们删除的不是选中状态的li 的时候，原来的选中状态li 保持不变
+      if(document.querySelector('.liactive')) return
+      //当我们删除了选中状态的这个li 的时候，让它的前一个li 处于选定状态
+      index--;
+      //手动调用我们的点击事件  如果有index 则执行点击事件  不需要鼠标触发
+        that.lis[index] && that.lis[index].click()
    }
 //     4. 修改功能
-   delTab(){
-       
+   updateTab(){
+       //获取文本框的内容
+       var str = this.innerHTML
+       //双击禁止选择文字
+       window.getSelection ?  window.getSelection().removeAllRanges() : document.getSelection.empty()
+       //点击生成文本框
+       this.innerHTML='<input type="text"/>'
+       //将文本框的内容给新生成的文本框
+       var input =this.children[0];
+       input.value=str
+       //文本框里面的文字处于选定状态
+       input.select()
+       //当我们离开文本框就把文本框里面的值给span
+       input.onblur=function(){
+           this.parentNode.innerHTML=this.value
+       }
    }
 }
 var tab=new Tab('#tab');
