@@ -29,6 +29,7 @@ class Tab{
            //为icon-guanbi 添加点击事件 调用删除功能
             this.remove[i].onclick=this.removeTab;
             this.spans[i].ondblclick=this.updateTab;
+            this.sections[i].ondblclick=this.updateTab;
            
        }
    }
@@ -93,6 +94,12 @@ class Tab{
        //当我们离开文本框就把文本框里面的值给span
        input.onblur=function(){
            this.parentNode.innerHTML=this.value
+       }
+       //按下回车也可以把文本框里面的值给span
+       input.onkeyup=function(e){
+           if(e.keyCode===13)   //回车键
+           //手动调用表单失去焦点事件  不需要鼠标离开操作
+           this.blur();
        }
    }
 }
