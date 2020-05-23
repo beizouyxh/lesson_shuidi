@@ -1,8 +1,19 @@
-
 let htmlStr = `<html>
- <head></head>
+ <head>
+   <style>
+   body div #myid {
+    width: 100px;
+    background-color: #fff; 
+  }
+   </style>
+ </head>
  <body>
-    <div></div>
+    <div>
+      123
+      <div id="myid">
+        <span class="text" ></span>
+      </div>
+    </div>
  </body>
 </html>
 `;
@@ -18,6 +29,8 @@ let htmlStr = `<html>
 // CSS 树
 // 
 let currentToken = null;
+let currentTextNode = null;
+let currentAttribuate = null;
 let stack = [
   { type: 'document', children: [] }
 ]
@@ -33,6 +46,13 @@ function start(c) {
   if (c === '<') {
     return tagOpen;
   } else {
+    // 只有在 emit 方便拿到该文本节点的 parent 
+    // 在 emit top 元素 就是 parent
+    // top.children
+    emit({
+      type: 'text',
+      content: c
+    })
     return start;
   }
 }
@@ -45,6 +65,7 @@ function tagOpen(c) {
     currentToken = {
       type: 'element',
       tag: 'startTag',
+      attributes: [],
       tagName: c
     }
     return tagName;
@@ -60,6 +81,49 @@ function tagName(c) {
     // 提交 当前 token
     emit(currentToken);
     return start;
+    // 之前：<div></div>
+    // 现在的：<div           id="myid"></div>
+  } else if (c.match(/^[\n\f\t ]$/)) {
+    return beforeAttribuate
+  }
+}
+// <div        id="myid">
+function beforeAttribuate(c) {
+  if (c.match(/^[\n\f\t ]$/)) {
+    return beforeAttribuate
+  } else if(c.match(/^[a-zA-Z]$/)) {
+    currentAttribuate = {
+      name: c,
+      value: ''
+    }
+    return attribuateName;
+  } else if (c === '>') {
+    emit(currentToken);
+    return start;
+  }
+}
+function attribuateName(c) {
+  if(c.match(/^[a-zA-Z]$/)) {
+    currentAttribuate.name += c;
+    return attribuateName;
+  } else if (c === '=') {
+    return attribuateValue
+  }
+}
+// >
+// attribuateValue('>')
+function attribuateValue(c) {
+  if (c === '\"' || c === '\"') {
+    // "" 
+    return attribuateValue;
+  } else if (c.match(/^[a-zA-Z]$/)) {
+    currentAttribuate.value += c;
+    return attribuateValue;
+  } else {
+    // c 丢了
+    currentToken.attributes.push(currentAttribuate);
+    currentAttribuate = null;
+    return beforeAttribuate(c);
   }
 }
 function endTagOpen(c) {
@@ -74,8 +138,6 @@ function endTagOpen(c) {
   }
 }
 
-
-
 console.log(JSON.stringify(stack, null, 2));
 function emit(token) {
   console.log(token);
@@ -84,17 +146,28 @@ function emit(token) {
     let element = {
       type: 'element',
       children: [],
-      attribute: [],
+      attributes: token.attributes,
       tagName: token.tagName
     }
     // 当前 element 一定是栈顶的 子元素
     top.children.push(element);
-    stack.push(element)
+    stack.push(element);
+    currentTextNode = null;
   } else if (token.tag === 'endTag') {
     if (top.tagName === token.tagName) {
-      stack.pop()
+      stack.pop();
+      currentTextNode = null;
     } else {
       throw new Error('no match');
     }
+  } else if (token.type === 'text') {
+    if (currentTextNode === null) {
+      currentTextNode = {
+        type: 'text',
+        content: ''
+      }
+      top.children.push(currentTextNode);
+    }
+    currentTextNode.content += token.content;
   }
 }
