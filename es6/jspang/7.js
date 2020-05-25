@@ -16,3 +16,12 @@ let arr1=Array.of(3,4,5,6);
 console.log(arr1);
 let arr2 =Array.of('技术胖','jspang','大胖逼逼叨');
 console.log(arr2);
+
+
+//find实例
+
+
+let arr3 =['jspang','技术','大胖'];
+console.log(arr3.find(function(value,index,arr){
+    return value=='技术胖'
+}))
