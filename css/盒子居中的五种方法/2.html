@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{
+            width: 200px;
+            margin: 0 auto;
+            background-color: blue;
+        } */
+
+
+        /* .container {
+           background: rgba(0, 0, 0, 0.5);
+           text-align: center;
+           font-size: 0;
+        }
+
+        .box {
+            display: inline-block;
+            width: 500px;
+            height: 400px;
+            background-color: pink;
+        } */
+
+        /* div {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: pink; /*方便看效果
+        } */
+
+        /* .box{
+            /*确定容器的宽高宽500高300的层设置层的外边距div{
+            position:absolute;/*绝对定位
+            width:500px;
+            height:300px;
+            top:50%;
+            left:50%;
+            margin:-150px 0 0 -250px;/*外边距为自身宽高的一半
+            background-color:pink;/*方便看效果
+            
+        } */
+
+        /* .box{
+            position: absolute; /*相对定位或绝对定位均可
+            width: 500px;
+            height: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: pink; /*方便看效果
+        } */
+
+       
+            /*利用flex布局实际使用时应考虑兼容性*/
+            /* .container {
+            display: flex;
+            align-items: center; /*垂直居中
+            justify-content: center; /*水平居中
+            background-color:blue;
+            }
+            .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink; /*方便看效果
+            } */
+        
+        /*利用text-align:center和vertical-align:middle属性*/
+        .container {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        font-size: 0;
+        white-space: nowrap;
+        overflow: auto;
+        }
+
+        .container::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        }
+
+        .box {
+        display: inline-block;
+        width: 500px;
+        height: 400px;
+        background-color: pink;
+        white-space: normal;
+        vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
