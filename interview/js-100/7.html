@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 观察者模式
+        function defineReactive(target, key, value) {
+            observer(value)
+            Object.defineProperty(target, key, {
+            get() {
+                return value;
+            },
+            set(newValue) {
+                observer(value)//递归
+                if (newValue !== value) {
+                value = newValue
+                updateView(); // 更新视图
+                }
+            }
+            })
+        }
+
+        function updateView() {
+            console.log('试图更新');
+        }
+
+         // MVVM  defineProperty  get set 能力  元编程
+        function observer(target) {
+            // 
+            if (typeof target  !== 'object' || target === null) {
+               return target;
+            }
+         
+            //push -> 改写为原型也可以 
+            if(Array.isArray(target)){    //数组
+                target.__proto__=arrProto
+            }
+
+            for (let key in target) {
+                defineReactive(target, key, target[key])
+            }
+        }
+
+        const oldArrayProperty=Array.prototype;
+        //截胡
+        const arrProto = Object.create(oldArrayProperty);
+        ["push","pop","shift","unshift","spluce"].forEach(methodName =>{
+            arrProto[methodName] =  function(){
+                updateView()
+                oldArrayProperty[methodName].call(this,...arguments)
+            }
+        })
+        const data={
+            name:'北走',
+            info:{
+                address:'南昌'
+            },
+            nums:[10,20,30]
+        }
+        observer(data)
+        // data.name='尹小豪'     //视图更新
+        // data.info.address='深圳'  //无响应   递归后响应
+        // data.nums[0]=1 ;//不需要响应
+        data.nums.push(40);  //无响应    改写为原型后视图更新
+    </script>
+</body>
+</html>

@@ -31,27 +31,21 @@
 //         return this.gn.next().value;
 //     }
 // }
-// var value = 0; //window.value
-// Object.defineProperty(window, 'a', {
-//     get: function() {
-//         return this.value += 1;
-//     }
-// });
 
-// console.log(a===1 && a===2 && a===3) // true
-let foo = {
-    value: 1,
-    getValue:function(){
-        console.log(this.value)
+var value = 0; //window.value
+Object.defineProperty(window, 'a', {
+    get(){
+        if(this.value){
+         return   this.value +=1
+        }else{
+           return this.value=1
+        }
     }
- }
-    function A() {
-        this.foo = 1
-      }
-      
-      A.prototype.bar =function(){  console.log(this.foo)}
-      
-      let a = new A()
-      a.bar()  //undefined
-  
-  foo.getValue();  // undefined
+});
+
+console.log(a===1 && a===2 && a===3) 
+
+
+
+
+    
