@@ -19,9 +19,7 @@ console.log(arr2);
 
 
 //find实例
-
-
 let arr3 =['jspang','技术','大胖'];
 console.log(arr3.find(function(value,index,arr){
-    return value=='技术胖'
+    return value=='技术胖'     //false
 }))

@@ -1,5 +1,5 @@
 function add(a,b=1){
-    // 'use strict'
+    'use strict'
     // if(a==0){
     //     throw new Error('a is error')
     // }
