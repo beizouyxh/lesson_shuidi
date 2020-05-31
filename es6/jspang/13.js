@@ -5,13 +5,12 @@ console.log(setArr);  //Set {"jspang", "技术胖", "web"}
 // add添加
 setArr.add('前端职场')  //Set { 'jspang', '技术胖', 'web', '前端职场' }
 console.log(setArr);
-
 //has查找
 console.log(setArr.has('jspang'))   //true
-
 //delete删除
 setArr.delete('技术胖')
 console.log(setArr)
+
 
 //for..of
 for(let item of setArr){
