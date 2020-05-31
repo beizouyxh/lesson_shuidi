@@ -19,14 +19,15 @@ var obj={
 console.log(obj[jspang]);
 obj[jspang]='web';
 console.log(obj[jspang]);
+
 //Symbol对象元素的保护作用
 var obj={name:'jspang',skill:'web',age:18};
 let sex=Symbol()
 obj[sex]="男"
-console.log(obj)
+console.log(obj)   //{ name: 'jspang', skill: 'web', age: 18, [Symbol()]: '男' }
 
 //对sex进行保护
 for (let item in obj){
-    console.log(obj[item]);   
+    console.log(obj[item]);     //jspang  web 18 
 }
 console.log(obj[sex])
