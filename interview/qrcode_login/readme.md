@@ -16,3 +16,4 @@
   1. node 插入一条qrcode 记录{qrcode_id,expires_at,creat-at} 生成一个二维码图片
   2. PC端的登录页，二维码，显示出来
   3. 扫码 得到qrcodeID 使用postman 模拟
+  4. 手机端 登录状态

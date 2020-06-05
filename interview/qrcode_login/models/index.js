@@ -1,6 +1,6 @@
-const UserMeodel=require('./user')
+const UserModel=require('./user')
 const QRCodeModel=require('./qrcode')
 module.exports={
-    UserMeodel,
+    UserModel,
     QRCodeModel
 }
