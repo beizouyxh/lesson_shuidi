@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+              display: flex;
+              width: 300px;
+              height: 300px;
+              margin: 50px;
+              flex-wrap: wrap;
+              
+            }
+            .flex > li{
+              box-sizing: border-box;
+              height: 100px;
+              width: 100px;
+              /* margin-left: -4px;
+              margin-top: -4px; */
+              line-height: 100px;
+              text-align: center;
+              list-style: none;
+              border: 2px solid #ccc;
+            }
+        
+            .flex > li:hover{
+              border-color:red;
+              position: relative;
+              /*z-index:2;*/
+            }
+        </style>
+</head>
+<body>
+    
+         <ul class="flex">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>flex</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+       
+</body>
+</html>
