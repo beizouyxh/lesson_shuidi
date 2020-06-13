@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: chartreuse;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+    //  重绘（repaint） 重排=回流（reflow）
+    //  浏览器有个优化机制，队列
+    //offsetLeft offsetTop 布局信息 layout
+    //读取，冲破浏览器优化，队列被清空
+     const ele=document.querySelector('.box');
+     
+     ele.style.left=100 +ele.offsetLeft + 'px';
+     ele.style.top=100 + ele.offsetTop + 'px'
+    </script>
+</body>
+</html>
