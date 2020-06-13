@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 'use strict'
+        // function func(){
+        //     //this指向包装类
+        //     console.log(this)
+        // } 
+        // // func.call(1)   //Number
+        // func.call(null)     //严格模式下 null  ;非严格模式下 window
+
+        var person={    //json object
+            0:'前端',
+            1:'前端小白',
+            length:2
+        }
+       Array.prototype.push.call(person,'海弟','海贼王');
+       console.log(person)
+    </script>
+</body>
+</html>
