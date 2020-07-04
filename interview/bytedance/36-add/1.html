@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str='0123456789abcdefghijklmnopqrstuvwxyz';
+        function add(num1,num2){
+            let carry=0;
+            let len=Math.max(num1.length,num2.length);
+            let res='';
+            for(let i=0;i<len;i++){
+                //对齐索引
+                let a=num1.length-1-i;
+                let b=num2.length-1-i;
+                //数值对齐，超过的默认为0
+                let aNumber=i<num1.length ? num1[a] : 0 , bNumber = i <num2.length ? num2[b] : 0;
+                console.log(aNumber,bNumber)
+
+                let sum=str.indexOf(aNumber)+str.indexOf(bNumber) + carry;
+                if(sum>=36){
+                    carry=1;
+                }else{
+                    carry=0;
+                }
+                //转成字符串里面的字符
+                res=str.charAt(sum % 36) +res;
+            }
+            if(carry > 0){
+                res=str.charAt(carry)+res;
+            }
+            return res
+        }
+        let res=add('123bz','cf12789');
+        console.log(parseInt(res,36) === parseInt('123bz',36)+ parseInt('cf12789',36));
+    </script>
+</body>
+</html>
