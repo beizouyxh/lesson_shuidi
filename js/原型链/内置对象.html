@@ -1,0 +1,21 @@
+<script>
+    //Array Function Object Number String Boolean....
+    // instanceof：右边构造的prototype有么有出现在左边对象的原型链上（递归和循环）
+    console.log(Object instanceof Function);  //true
+    console.log(Function instanceof Object)    //true
+
+    function foo(){}
+    // foo.call()
+    // foo.apply()
+    // foo.bind()
+    // 来自于 Function.prototype
+
+    let arr=[]
+    // arr.push arr.pop arr.shift 来自于 Array.prototype
+
+    let obj={}
+    // obj.has  来自于 Object.prototype
+
+    function Array(){}
+    console.log(Array.__proto__===Function.prototype)
+</script>
