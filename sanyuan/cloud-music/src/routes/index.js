@@ -4,8 +4,8 @@ import Home from '../application/Home';
 import Recommend from '../application/Recommend';
 import Singers from '../application/Singers';
 import Rank from '../application/Rank';
-
 import { Redirect } from 'react-router-dom';
+
 export default [{
   path: "/",
   component: Home,

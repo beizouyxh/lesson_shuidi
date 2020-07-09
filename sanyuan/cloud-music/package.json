@@ -15,7 +15,10 @@
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
     "redux-immutable": "^4.0.0",
-    "styled-components": "^5.1.0"
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.0",
+    "swiper": "^6.0.1",
+    "webpack": "4.42.0"
   },
   "scripts": {
     "start": "react-scripts start",
