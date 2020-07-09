@@ -1,0 +1,12 @@
+<script>
+    // const arr=[0,1,2];
+    const methods=['pop','push','shift','unshift'];
+    methods.forEach((item)=>{
+        let original=Array.prototype[item];
+        Array.prototype[item]=function(){
+            console.log('监听');
+            return original.apply(this,arguments);
+        }
+    })
+    
+</script>
