@@ -1,0 +1,15 @@
+<script>
+    let p=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(new Error('err'))
+        },1000)
+    })
+    let p1=new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            resolve(123)
+        },2000)
+    })
+   Promise.all([p,p1]).then(res=>{
+       console.log(res)
+   })
+</script>

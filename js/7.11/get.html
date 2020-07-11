@@ -1,0 +1,25 @@
+<script>
+    let obj={
+        a:{
+            b:{
+                c:1
+            },
+            d:[1,2]
+        }
+    }
+    console.log(get(obj,'a.b.c'))
+    console.log(get(obj,'a.d[3]'));
+
+    function get(source,path){
+        try{
+            let paths=path.split('.');
+            let res=source;
+            for(let key of paths){
+                res=res[key]
+            }
+            return res;
+        }catch{
+            return undefined
+        }
+    }
+</script>
