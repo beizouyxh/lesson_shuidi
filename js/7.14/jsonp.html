@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function callback(data){
+            console.log('拿到后端的数据',data)
+        }
+    </script>
+    <!-- script 发送js请求 我们的浏览器收到响应后，也按照js的语法格式 -->
+    <script src="http://localhost:8090/api"></script>
+</body>
+</html>
