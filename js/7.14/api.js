@@ -10,6 +10,12 @@ app.get('/api', function (req, res) {
     }
     res.send(`callback(${JSON.stringify(json)})`)
 });
+app.get('/abc.js',(req,res)=>{
+    const fs=require('fs');
+    const content=fs.readFileSync('./abc.js','utf8')
+    res.setHeader('Cache-Control','max-age=10')
+    res.setHeader('etag','abcdefg');
+})
 app.listen(8090, () => {
     console.log('8090')
 })
