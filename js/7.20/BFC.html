@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左边固定，右边自适应</title>
+    <style>
+        div{
+
+        }
+        .left{
+            width: 40px;
+            background-color: blue;
+            float: left;
+        }
+        .right{
+            background-color: chartreuse;
+            overflow: hidden;
+            /*1.overflow:hidden
+              2.float不为none
+              3.display:table,table-cell
+              4.absolute/fixed*/
+        }
+    </style>
+</head>
+<body>
+    <div class="left">left</div>
+    <div class="right">right
+     右边<br/>
+     右边<br/>
+     右边<br/>
+    </div>
+</body>
+</html>
