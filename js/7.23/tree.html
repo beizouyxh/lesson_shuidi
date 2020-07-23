@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a1">
+        <div id="b1">
+            <div id="c1"></div>
+            <div id="c2"></div>
+        </div>
+        <div id="b2"></div>
+    </div>
+    <script>
+        const tree=document.querySelector('#a1');
+        function walk(node){
+           console.log(node.tagName,node.id);
+           let children=node.children
+           for(let child of children){
+               walk(child);
+           }
+        }
+        walk(tree);
+    </script>
+</body>
+</html>

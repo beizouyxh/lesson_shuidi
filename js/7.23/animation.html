@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            animation: move 3s infinite;
+        }
+
+        @keyframes move {
+            to {
+                transform: translate3d(400px, 400px, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // const box = document.querySelector('.box');
+        // box.addEventListener('click', () => {
+        //     console.log(1)
+        // })
+
+        function sleep(delay) {
+            for (let start = Date.now(); Date.now() - start <= delay;) { }
+        }
+
+
+        // 每一个子项可以认为是一个 fiber
+        const works = [
+            () => {
+                console.log('第一个任务开始');
+                sleep(8000);
+                console.log('第一个任务结束');
+            },
+            () => {
+                console.log('第 2 个任务开始');
+                sleep(8000);
+                console.log('第 2 个任务结束');
+            },
+            () => {
+                console.log('第 3 个任务开始');
+                sleep(8000);
+                console.log('第 3 个任务结束');
+            },
+        ];
+        let stackRec=function(){
+            for(let w of works){
+                w();
+            }
+        }
+        stackRec()
+
+    </script>
+</body>
+
+</html>
