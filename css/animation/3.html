@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .map{
+            position: relative;
+            width: 720px;
+            height:800px;
+            background: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596463821908&di=b88a874473935ce495edfb7eec9963f5&imgtype=0&src=http%3A%2F%2Fstc.zjol.com.cn%2Fg1%2FM00086FCggSBFlkJeKAO_fiAAouLx4BNUY901.jpg%3Fwidth%3D720%26height%3D960");
+            margin: 0 auto;
+        }
+        .city{
+            position: absolute;
+            top: 406px;
+            right: 221px;
+        }
+        .tb{
+            top: 617px;
+            right: 156px;   
+        }
+        .gz{
+            top: 655px;
+            right: 258px;
+        }
+        .dotted{
+            width: 8px;
+            height: 8px;
+            background-color: royalblue;
+            border-radius: 50%;
+        }
+        .city div[class^="pulse"]{
+            /* 保证我们的小波纹在父盒子里面水平垂直居中 放大以后就会向四周发散 */
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 8px;
+            height: 8px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.2s linear infinite ;
+        }
+        @keyframes pulse {
+            0%{
+
+            }
+            70%{
+                width: 40px;
+                height: 40px;
+                /* opacity透明度 */
+                opacity: 1;   
+            }
+            100%{
+                width: 70px;
+                height: 70px;
+                opacity: 0;
+            }
+        }
+        .city div.pulse2{
+            animation-delay: 0.4s;
+        }
+        .city div.puls3{
+            animation-delay: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city tb">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+        <div class="city gz">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+        </div>
+    </div>
+</body>
+</html>

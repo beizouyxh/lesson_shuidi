@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes move {
+            0%{
+                transform: translate(0,0);
+            }
+            100%{
+                transform: translate(1000px,0);
+            }
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: firebrick;
+            /* 前面两个属性必写 */
+            animation: move 2s linear 0s 1  forwards;
+            /* animation-name: move;
+            animation-duration: 2s; */
+            /* //动画的运动曲线 */
+            /* animation-timing-function: ease; */
+            /* 延时 */
+            /* animation-delay: 1s; */
+            /* 重复默认是1  无限循环*/
+            /* animation-iteration-count: infinite; */
+            /* 是否反方向播放 默认为normal*/
+            /* animation-direction: alternate; */
+
+            /* 保持结束状态默认的是backwards 起始位置*/
+            animation-fill-mode: forwards;
+        }
+        div:hover{
+            /* 规定动画是否运行或停止 */
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
